@@ -20,32 +20,27 @@ const request = require("request"),
   app = express().use(body_parser.json()); // creates express http server
 
 const fs = require('fs');
-const createCsvWriter = require('csv-writer').createObjectCsvWriter;
-
 const verify_token = process.env.VERIFY_TOKEN;
 
-const csvWriter = createCsvWriter({
-  path: 'whatsapp-log.csv',
-  header: [
-    { id: 'recipient_id', title: 'Recipient ID' },
-    { id: 'status', title: 'Status' },
-  ],
-});
-
 const writeToCSV = (recipient_id, status) => {
-  const records = [{ recipient_id, status }];
+  const record = `${recipient_id},${status}\n`;
 
-  csvWriter.writeRecords(records)
-    .then(() => console.log('CSV file written successfully'))
-    .catch((err) => console.error('Error writing CSV:', err));
+  try {
+    fs.appendFileSync('whatsapp-log.csv', record, 'utf-8');
+    console.log('CSV file written successfully');
+  } catch (err) {
+    console.error('Error writing CSV:', err);
+    fs.appendFileSync('whatsapp-error-log.csv', err, 'utf-8');
+  }
 };
 
 const handleWebhook = (req, res) => {
   let body = req.body;
 
-  console.log('Aqui mostra o retorno' + JSON.stringify(req.body, null, 2));
+  
 
   if (req.body.object) {
+    console.log(JSON.stringify(req.body, null, 2));
     if (
       req.body.entry &&
       req.body.entry[0].changes &&
@@ -57,8 +52,11 @@ const handleWebhook = (req, res) => {
         req.body.entry[0].changes[0].value.metadata.phone_number_id;
       let from = req.body.entry[0].changes[0].value.messages[0].from;
       let msg_body = req.body.entry[0].changes[0].value.messages[0].text.body;
+      
+      let recipient_id = req.body.entry[0].changes[0].value.statuses[0].recipient_id;
+      let status = req.body.entry[0].changes[0].value.statuses[0].status;
 
-      writeToCSV(from, 'delivered'); // Assuming 'delivered' status, modify accordingly
+      writeToCSV(recipient_id, status); // Assuming 'delivered' status, modify accordingly
 
       axios({
         method: "POST",
