@@ -1,6 +1,7 @@
 dependencies:
   axios: 0.27.2
   body-parser: 1.20.0
+  csv-writer: 1.6.0
   express: 4.18.1
   request: 2.88.2
 packages:
@@ -136,6 +137,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-tf1UIgqivFq1eqtxQMlAdUUDwac=
+  /csv-writer/1.6.0:
+    dev: false
+    resolution:
+      integrity: sha512-NOx7YDFWEsM/fTRAJjRpPp8t+MKRVvniAg9wQlUKx20MFrPs73WLJhFf5iteqrxNYnsy924K3Iroh3yNHeYd2g==
   /dashdash/1.14.1:
     dependencies:
       assert-plus: 1.0.0
@@ -751,5 +756,6 @@ shrinkwrapVersion: 3
 specifiers:
   axios: ^0.27.2
   body-parser: ^1.20.0
+  csv-writer: ^1.0.0
   express: ^4.18.1
   request: ^2.88.2
