@@ -3,6 +3,7 @@ dependencies:
   body-parser: 1.20.0
   csv-writer: 1.6.0
   express: 4.18.1
+  moment-timezone: 0.5.45
   request: 2.88.2
 packages:
   /accepts/1.3.8:
@@ -480,6 +481,16 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-x0Vn8spI+wuJ1O6S7gnbaQg8Pxh4NNHb7KSINmEWKiPE4RKOplvijn+NkmYmmRgP68mc70j2EbeTFRsrswaQeg==
+  /moment-timezone/0.5.45:
+    dependencies:
+      moment: 2.30.1
+    dev: false
+    resolution:
+      integrity: sha512-HIWmqA86KcmCAhnMAN0wuDOARV/525R2+lOLotuGFzn4HO+FH+/645z2wx0Dt3iDv6/p61SIvKnDstISainhLQ==
+  /moment/2.30.1:
+    dev: false
+    resolution:
+      integrity: sha512-uEmtNhbDOrWPFS+hdjFCBfy9f2YoyzRpwcl+DqpC6taX21FzsTLQVbMV/W7PzNSX6x/bhC1zA3c2UQ5NzH6how==
   /ms/2.0.0:
     dev: false
     resolution:
@@ -758,4 +769,5 @@ specifiers:
   body-parser: ^1.20.0
   csv-writer: ^1.0.0
   express: ^4.18.1
+  moment-timezone: ^0.5.32
   request: ^2.88.2

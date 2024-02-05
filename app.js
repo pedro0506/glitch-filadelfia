@@ -19,11 +19,14 @@ const request = require("request"),
   axios = require("axios").default,
   app = express().use(body_parser.json()); // creates express http server
 
+const moment = require('moment-timezone');
+
+
 const fs = require('fs');
 const verify_token = process.env.VERIFY_TOKEN;
 
-const writeToCSV = (recipient_id, status) => {
-  const record = `${recipient_id},${status}\n`;
+const writeToCSV = (recipient_id, status, currentTime) => {
+  const record = `${recipient_id},${status},${currentTime}\n`;
 
   try {
     fs.appendFileSync('whatsapp-log.csv', record, 'utf-8');
@@ -40,7 +43,22 @@ const handleWebhook = (req, res) => {
   
 
   if (req.body.object) {
-    console.log(JSON.stringify(req.body, null, 2));
+    if (
+      req.body.entry &&
+      req.body.entry[0].changes[0].value.statuses[0].recipient_id
+    ) {
+            
+      let recipient_id = req.body.entry[0].changes[0].value.statuses[0].recipient_id;
+      let status = req.body.entry[0].changes[0].value.statuses[0].status;
+      let currentTime = moment().tz('America/Sao_Paulo').format('DD-MM-YYYY HH:mm:ss');
+      
+      if(status == "delivered"){
+        writeToCSV(recipient_id, status, currentTime); // Assuming 'delivered' status, modify accordingly
+        console.log(JSON.stringify(req.body, null, 2));
+      }
+      
+    }
+    
     if (
       req.body.entry &&
       req.body.entry[0].changes &&
@@ -52,11 +70,6 @@ const handleWebhook = (req, res) => {
         req.body.entry[0].changes[0].value.metadata.phone_number_id;
       let from = req.body.entry[0].changes[0].value.messages[0].from;
       let msg_body = req.body.entry[0].changes[0].value.messages[0].text.body;
-      
-      let recipient_id = req.body.entry[0].changes[0].value.statuses[0].recipient_id;
-      let status = req.body.entry[0].changes[0].value.statuses[0].status;
-
-      writeToCSV(recipient_id, status); // Assuming 'delivered' status, modify accordingly
 
       axios({
         method: "POST",
