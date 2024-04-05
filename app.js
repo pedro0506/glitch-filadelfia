@@ -43,20 +43,11 @@ const handleWebhook = (req, res) => {
       
 
   if (req.body.object) {
+
     if (
       req.body.entry &&
-      req.body.entry[0].changes[0].value.statuses[0].recipient_id
+      req.body.entry[0].changes[0].value.messages[0]
     ) {
-            
-      let recipient_id = req.body.entry[0].changes[0].value.statuses[0].recipient_id;
-      let status = req.body.entry[0].changes[0].value.statuses[0].status;
-      let currentTime = moment().tz('America/Sao_Paulo').format('DD-MM-YYYY HH:mm:ss');
-      
-      if(status == "delivered"){
-        writeToCSV(recipient_id, status, currentTime); // Assuming 'delivered' status, modify accordingly
-        console.log(JSON.stringify(req.body, null, 2));
-      }
-
       // INICIO DE AUTOMAÇÃO
       const message = req.body.entry[0].changes[0].value.messages[0];
       console.log("MESSAGE_RECEBIDA" + message);
@@ -83,6 +74,24 @@ const handleWebhook = (req, res) => {
             },
           });
       }
+    }
+
+
+    if (
+      req.body.entry &&
+      req.body.entry[0].changes[0].value.statuses[0].recipient_id
+    ) {
+            
+      let recipient_id = req.body.entry[0].changes[0].value.statuses[0].recipient_id;
+      let status = req.body.entry[0].changes[0].value.statuses[0].status;
+      let currentTime = moment().tz('America/Sao_Paulo').format('DD-MM-YYYY HH:mm:ss');
+      
+      if(status == "delivered"){
+        writeToCSV(recipient_id, status, currentTime); // Assuming 'delivered' status, modify accordingly
+        console.log(JSON.stringify(req.body, null, 2));
+      }
+
+      
       
     }
     
