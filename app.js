@@ -67,7 +67,7 @@ const handleWebhook = (req, res) => {
             data: {
               messaging_product: "whatsapp",
               to: message.from,
-              text: { body: "Olá você escolheu a opção 1" },
+              text: { body: "" },
               context: {
                 message_id: message.id, // shows the message as a reply to the original user message
               },
