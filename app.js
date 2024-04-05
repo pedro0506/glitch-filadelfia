@@ -50,7 +50,7 @@ const handleWebhook = (req, res) => {
     ) {
       // INICIO DE AUTOMAÇÃO
       const message = req.body.entry[0].changes[0].value.messages[0];
-      console.log("MESSAGE_RECEBIDA" + message);
+      console.log("MESSAGE_RECEBIDA" + JSON.parse(message));
       // check if the incoming message contains text
       if (message && message.type === "text") {
         // extract the business number to send the reply from it
@@ -62,7 +62,7 @@ const handleWebhook = (req, res) => {
             method: "POST",
             url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
             headers: {
-              Authorization: `Bearer ${GRAPH_API_TOKEN}`,
+              Authorization: `Bearer ${token}`,
             },
             data: {
               messaging_product: "whatsapp",
