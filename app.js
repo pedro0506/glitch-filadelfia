@@ -37,44 +37,45 @@ const writeToCSV = (recipient_id, status, currentTime) => {
   }
 };
 
+const handledMessages = {}; // Objeto para armazenar os IDs das mensagens que já foram tratadas
+
 const handleWebhook = (req, res) => {
   let body = req.body;
 
-      
-
   if (req.body.object) {
-
-    if (
-      req.body.entry &&
-      req.body.entry[0].changes[0].value.messages[0]
-    ) {
-      // INICIO DE AUTOMAÇÃO
+    if (req.body.entry && req.body.entry[0].changes[0].value.messages[0]) {
       const message = req.body.entry[0].changes[0].value.messages[0];
       console.log("MESSAGE_RECEBIDA" + JSON.stringify(message, null, 2));
-      // check if the incoming message contains text
+
       if (message && message.type === "text") {
-        // extract the business number to send the reply from it
         const business_phone_number_id =
           req.body.entry[0].changes[0].value.metadata.phone_number_id;
 
-          if (message.text.body.includes('Crwa')) {
-            // send a reply message as per the docs here https://developers.facebook.com/docs/whatsapp/cloud-api/reference/messages
-            axios({
-              method: "POST",
-              url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
-              headers: {
-                Authorization: `Bearer ${token}`,
+        if (
+          message.text.body.includes('Crwa') &&
+          !handledMessages[message.id] // Verifica se a mensagem já foi tratada
+        ) {
+          axios({
+            method: "POST",
+            url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+            data: {
+              messaging_product: "whatsapp",
+              to: message.from,
+              text: { body: "Teste de retorno de mensagem." },
+              context: {
+                message_id: message.id,
               },
-              data: {
-                messaging_product: "whatsapp",
-                to: message.from,
-                text: { body: "Teste de retorno de mensagem." },
-                context: {
-                  message_id: message.id, // shows the message as a reply to the original user message
-                },
-              },
-            });
-          }
+            },
+          }).then(() => {
+            // Marca a mensagem como tratada
+            handledMessages[message.id] = true;
+          }).catch(error => {
+            console.error("Erro ao enviar mensagem:", error);
+          });
+        }
       }
     }
 
