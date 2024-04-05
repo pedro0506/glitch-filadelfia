@@ -50,7 +50,7 @@ const handleWebhook = (req, res) => {
     ) {
       // INICIO DE AUTOMAÇÃO
       const message = req.body.entry[0].changes[0].value.messages[0];
-      console.log("MESSAGE_RECEBIDA" + JSON.parse(message));
+      console.log("MESSAGE_RECEBIDA" + JSON.stringify(message, null, 2));
       // check if the incoming message contains text
       if (message && message.type === "text") {
         // extract the business number to send the reply from it
