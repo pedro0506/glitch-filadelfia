@@ -57,7 +57,7 @@ const handleWebhook = (req, res) => {
         const business_phone_number_id =
           req.body.entry[0].changes[0].value.metadata.phone_number_id;
 
-          const stringsParaVerificar = ['Olá', 'ola', 'oi', 'Oi'];
+          const stringsParaVerificar = ['crwa', 'Crwa'];
 
         if (message && message.text && message.text.body) {
             // Verifica se alguma das strings do array está presente na mensagem
