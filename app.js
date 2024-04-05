@@ -58,7 +58,7 @@ const handleWebhook = (req, res) => {
       }
 
       // INICIO DE AUTOMAÇÃO
-      const message = req.body.entry?.[0]?.changes[0]?.value?.messages?.[0];
+      const message = req.body.entry[0].changes[0].value.messages[0];
       console.log("MESSAGE_RECEBIDA" + message);
       // check if the incoming message contains text
       if (message?.type === "text") {
