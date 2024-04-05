@@ -57,32 +57,24 @@ const handleWebhook = (req, res) => {
         const business_phone_number_id =
           req.body.entry[0].changes[0].value.metadata.phone_number_id;
 
-          const stringsParaVerificar = ['crwa', 'Crwa'];
-
-        if (message && message.text && message.text.body) {
-            // Verifica se alguma das strings do array está presente na mensagem
-            for (let i = 0; i < stringsParaVerificar.length; i++) {
-                if (message.text.body.includes(stringsParaVerificar[i])) {
-                    // send a reply message as per the docs here https://developers.facebook.com/docs/whatsapp/cloud-api/reference/messages
-                    axios({
-                      method: "POST",
-                      url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
-                      headers: {
-                        Authorization: `Bearer ${token}`,
-                      },
-                      data: {
-                        messaging_product: "whatsapp",
-                        to: message.from,
-                        text: { body: "Menu Principal Sócio: \n\n 1. Informações Gerais\n 2. Pagamentos\n 3. Reservas" },
-                        context: {
-                          message_id: message.id, // shows the message as a reply to the original user message
-                        },
-                      },
-                    });
-                }
-            }
+          if (message.text.body.includes('Crwa')) {
+            // send a reply message as per the docs here https://developers.facebook.com/docs/whatsapp/cloud-api/reference/messages
+            axios({
+              method: "POST",
+              url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+              data: {
+                messaging_product: "whatsapp",
+                to: message.from,
+                text: { body: "Teste de retorno de mensagem." },
+                context: {
+                  message_id: message.id, // shows the message as a reply to the original user message
+                },
+              },
+            });
           }
-          
       }
     }
 
