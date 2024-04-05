@@ -61,7 +61,7 @@ const handleWebhook = (req, res) => {
       const message = req.body.entry[0].changes[0].value.messages[0];
       console.log("MESSAGE_RECEBIDA" + message);
       // check if the incoming message contains text
-      if (message?.type === "text") {
+      if (message && message.type === "text") {
         // extract the business number to send the reply from it
         const business_phone_number_id =
           req.body.entry?.[0].changes?.[0].value?.metadata?.phone_number_id;
