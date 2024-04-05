@@ -52,7 +52,7 @@ const handleWebhook = (req, res) => {
           req.body.entry[0].changes[0].value.metadata.phone_number_id;
 
         if (
-          message.text.body.includes('Crwa') &&
+          message.text.body.includes('Testar') &&
           !handledMessages[message.id] // Verifica se a mensagem já foi tratada
         ) {
           axios({
