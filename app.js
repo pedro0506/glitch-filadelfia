@@ -77,7 +77,7 @@ const handleWebhook = (req, res) => {
           });
 
         if (
-          message.text.body.includes('Testar') &&
+          message.text.body.includes('Menu') &&
           !handledMessages[message.id] // Verifica se a mensagem já foi tratada
         ) {
           axios({
@@ -87,12 +87,16 @@ const handleWebhook = (req, res) => {
               Authorization: `Bearer ${token}`,
             },
             data: {
-              messaging_product: "whatsapp",
-              to: message.from,
-              text: { body: "Teste de retorno de mensagem." },
-              context: {
-                message_id: message.id,
-              },
+              "messaging_product": "whatsapp",
+              "recipient_type":"individual",
+              "to": message.from,
+              "type": "template",
+              "template": {
+                  "name": "menu", // envio do mês servico1 / para lembrete envio servico
+                  "language": {
+                      "code": "pt_BR"
+                  }
+              }
             },
           }).then(() => {
             // Marca a mensagem como tratada
