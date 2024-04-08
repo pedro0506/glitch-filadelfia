@@ -51,59 +51,59 @@ const handleWebhook = (req, res) => {
         const business_phone_number_id =
           req.body.entry[0].changes[0].value.metadata.phone_number_id;
 
-          axios({
-            method: "POST",
-            url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-            data: {
-              "messaging_product": "whatsapp",
-              "recipient_type":"individual",
-              "to": message.from,
-              "type": "template",
-              "template": {
-                  "name": "hello", // envio do mês servico1 / para lembrete envio servico
-                  "language": {
-                      "code": "pt_BR"
-                  }
-              }
-            },
-          }).then(() => {
-            // Marca a mensagem como tratada
-            handledMessages[message.id] = true;
-          }).catch(error => {
-            console.error("Erro ao enviar mensagem:", error);
-          });
+          // axios({
+          //   method: "POST",
+          //   url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+          //   headers: {
+          //     Authorization: `Bearer ${token}`,
+          //   },
+          //   data: {
+          //     "messaging_product": "whatsapp",
+          //     "recipient_type":"individual",
+          //     "to": message.from,
+          //     "type": "template",
+          //     "template": {
+          //         "name": "hello", // envio do mês servico1 / para lembrete envio servico
+          //         "language": {
+          //             "code": "pt_BR"
+          //         }
+          //     }
+          //   },
+          // }).then(() => {
+          //   // Marca a mensagem como tratada
+          //   handledMessages[message.id] = true;
+          // }).catch(error => {
+          //   console.error("Erro ao enviar mensagem:", error);
+          // });
 
         if (
           message.text.body.includes('Menu') &&
           !handledMessages[message.id] // Verifica se a mensagem já foi tratada
         ) {
-          axios({
-            method: "POST",
-            url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-            data: {
-              "messaging_product": "whatsapp",
-              "recipient_type":"individual",
-              "to": message.from,
-              "type": "template",
-              "template": {
-                  "name": "menu", // envio do mês servico1 / para lembrete envio servico
-                  "language": {
-                      "code": "pt_BR"
-                  }
-              }
-            },
-          }).then(() => {
-            // Marca a mensagem como tratada
-            handledMessages[message.id] = true;
-          }).catch(error => {
-            console.error("Erro ao enviar mensagem:", error);
-          });
+          // axios({
+          //   method: "POST",
+          //   url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+          //   headers: {
+          //     Authorization: `Bearer ${token}`,
+          //   },
+          //   data: {
+          //     "messaging_product": "whatsapp",
+          //     "recipient_type":"individual",
+          //     "to": message.from,
+          //     "type": "template",
+          //     "template": {
+          //         "name": "menu", // envio do mês servico1 / para lembrete envio servico
+          //         "language": {
+          //             "code": "pt_BR"
+          //         }
+          //     }
+          //   },
+          // }).then(() => {
+          //   // Marca a mensagem como tratada
+          //   handledMessages[message.id] = true;
+          // }).catch(error => {
+          //   console.error("Erro ao enviar mensagem:", error);
+          // });
         }
       }
     }
