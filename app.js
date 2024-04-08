@@ -85,7 +85,6 @@ const handleWebhook = (req, res) => {
           // Verificar se é hora de enviar o template "hello"
           const currentTime = Date.now();
           if (
-            message.text.body.includes('Crwa') && // Condição para enviar o template "hello"
             (!lastHelloSent[message.from] || (currentTime - lastHelloSent[message.from] > 3600000)) // Enviar apenas uma vez por hora
           ) {
             axios({
