@@ -38,6 +38,7 @@ const writeToCSV = (recipient_id, status, currentTime) => {
 };
 
 const handledMessages = {}; // Objeto para armazenar os IDs das mensagens que já foram tratadas
+const lastHelloSent = {};
 
 const handleWebhook = (req, res) => {
   let body = req.body;
@@ -51,59 +52,67 @@ const handleWebhook = (req, res) => {
         const business_phone_number_id =
           req.body.entry[0].changes[0].value.metadata.phone_number_id;
 
-          // axios({
-          //   method: "POST",
-          //   url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
-          //   headers: {
-          //     Authorization: `Bearer ${token}`,
-          //   },
-          //   data: {
-          //     "messaging_product": "whatsapp",
-          //     "recipient_type":"individual",
-          //     "to": message.from,
-          //     "type": "template",
-          //     "template": {
-          //         "name": "hello", // envio do mês servico1 / para lembrete envio servico
-          //         "language": {
-          //             "code": "pt_BR"
-          //         }
-          //     }
-          //   },
-          // }).then(() => {
-          //   // Marca a mensagem como tratada
-          //   handledMessages[message.id] = true;
-          // }).catch(error => {
-          //   console.error("Erro ao enviar mensagem:", error);
-          // });
+        // Verificar se a mensagem já foi tratada
+        if (!handledMessages[message.id]) {
+          // Marcar a mensagem como tratada
+          handledMessages[message.id] = true;
 
-        if (
-          message.text.body.includes('Menu') &&
-          !handledMessages[message.id] // Verifica se a mensagem já foi tratada
-        ) {
-          // axios({
-          //   method: "POST",
-          //   url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
-          //   headers: {
-          //     Authorization: `Bearer ${token}`,
-          //   },
-          //   data: {
-          //     "messaging_product": "whatsapp",
-          //     "recipient_type":"individual",
-          //     "to": message.from,
-          //     "type": "template",
-          //     "template": {
-          //         "name": "menu", // envio do mês servico1 / para lembrete envio servico
-          //         "language": {
-          //             "code": "pt_BR"
-          //         }
-          //     }
-          //   },
-          // }).then(() => {
-          //   // Marca a mensagem como tratada
-          //   handledMessages[message.id] = true;
-          // }).catch(error => {
-          //   console.error("Erro ao enviar mensagem:", error);
-          // });
+          // Verificar se a mensagem contém "Menu" para enviar o template "menu"
+          if (message.text.body.includes('Menu')) {
+            axios({
+              method: "POST",
+              url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+              data: {
+                "messaging_product": "whatsapp",
+                "recipient_type": "individual",
+                "to": message.from,
+                "type": "template",
+                "template": {
+                  "name": "menu",
+                  "language": {
+                    "code": "pt_BR"
+                  }
+                }
+              },
+            }).catch(error => {
+              console.error("Erro ao enviar mensagem:", error);
+            });
+          }
+
+          // Verificar se é hora de enviar o template "hello"
+          const currentTime = Date.now();
+          if (
+            message.text.body.includes('Crwa') && // Condição para enviar o template "hello"
+            (!lastHelloSent[message.from] || (currentTime - lastHelloSent[message.from] > 3600000)) // Enviar apenas uma vez por hora
+          ) {
+            axios({
+              method: "POST",
+              url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+              data: {
+                "messaging_product": "whatsapp",
+                "recipient_type": "individual",
+                "to": message.from,
+                "type": "template",
+                "template": {
+                  "name": "hello",
+                  "language": {
+                    "code": "pt_BR"
+                  }
+                }
+              },
+            }).then(() => {
+              // Registrar o momento em que o template "hello" foi enviado
+              lastHelloSent[message.from] = currentTime;
+            }).catch(error => {
+              console.error("Erro ao enviar mensagem:", error);
+            });
+          }
         }
       }
     }
