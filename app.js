@@ -109,7 +109,8 @@ const handleWebhook = (req, res) => {
               });
             }
 
-            if (message.text.body == '4') {
+            //regra 4
+            if (message.text.body == 'crwa') {
               axios({
                 method: "POST",
                 url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
@@ -120,9 +121,50 @@ const handleWebhook = (req, res) => {
                   "messaging_product": "whatsapp",
                   "recipient_type": "individual",
                   "to": message.from,
-                  "text": {
-                    "preview_url": true,
-                    "body": "Ainda nenhum evento disponível. \n\nInformações sobre eventos enviar mensagem para o número +55 33 9961-0892."
+                  "type": "interactive",
+                  "interactive": {
+                      "type": "list",
+                      "header": {
+                          "type": "text",
+                          "text": "SOCIEDADE RECREATIVA FILADÉLFIA"
+                      },
+                      "body": {
+                          "text": "Clique na opção abaixo para visualizar informações."
+                      },
+                      "footer": {
+                          "text": ""
+                      },
+                      "action": {
+                          "button": "Eventos",
+                          "sections": [
+                              {
+                                  "title": "Calendário de eventos",
+                                  "rows": [
+                                      {
+                                          "id": "evento1",
+                                          "title": "Evento 1",
+                                          "description": "Descrição 1"
+                                      },
+                                      {
+                                        "id": "evento2",
+                                        "title": "Evento 2",
+                                        "description": "Descrição 2"
+                                    },
+                                  ]
+                              },
+                              {
+                                  "title": "Contato Eventos",
+                                  "rows": [
+                                      {
+                                          "id": "contato",
+                                          "title": "Fale com o responsável do setor de eventos:",
+                                          "description": "WhatsApp (33) 99941053"
+                                      },
+                                      
+                                  ]
+                              }
+                          ]
+                      }
                   }
                 },
               }).catch(error => {
