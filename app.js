@@ -84,34 +84,34 @@ const handleWebhook = (req, res) => {
 
           // Verificar se é hora de enviar o template "hello"
           const currentTime = Date.now();
-          if (
-            (!lastHelloSent[message.from] || (currentTime - lastHelloSent[message.from] > 3600000)) // Enviar apenas uma vez por hora
-          ) {
-            axios({
-              method: "POST",
-              url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
-              headers: {
-                Authorization: `Bearer ${token}`,
-              },
-              data: {
-                "messaging_product": "whatsapp",
-                "recipient_type": "individual",
-                "to": message.from,
-                "type": "template",
-                "template": {
-                  "name": "hello",
-                  "language": {
-                    "code": "pt_BR"
-                  }
-                }
-              },
-            }).then(() => {
-              // Registrar o momento em que o template "hello" foi enviado
-              lastHelloSent[message.from] = currentTime;
-            }).catch(error => {
-              console.error("Erro ao enviar mensagem:", error);
-            });
-          }
+          // if (
+          //   (!lastHelloSent[message.from] || (currentTime - lastHelloSent[message.from] > 3600000)) // Enviar apenas uma vez por hora
+          // ) {
+          //   axios({
+          //     method: "POST",
+          //     url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+          //     headers: {
+          //       Authorization: `Bearer ${token}`,
+          //     },
+          //     data: {
+          //       "messaging_product": "whatsapp",
+          //       "recipient_type": "individual",
+          //       "to": message.from,
+          //       "type": "template",
+          //       "template": {
+          //         "name": "hello",
+          //         "language": {
+          //           "code": "pt_BR"
+          //         }
+          //       }
+          //     },
+          //   }).then(() => {
+          //     // Registrar o momento em que o template "hello" foi enviado
+          //     lastHelloSent[message.from] = currentTime;
+          //   }).catch(error => {
+          //     console.error("Erro ao enviar mensagem:", error);
+          //   });
+          // }
         }
       }
     }
