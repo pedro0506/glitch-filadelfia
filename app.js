@@ -122,7 +122,49 @@ const handleWebhook = (req, res) => {
                   "to": message.from,
                   "text": {
                     "preview_url": true,
-                    "body": "Dúvidas frequentes: \n\na. Aquisição de cota \nb. Venda de Cota \nc.Compra de cota terceiro \nd. Fotografias no clube (como funciona)? \ne. Falar com um Atendente \n\n Informe a opção desejada digitando apenas a letra.\nEx: 'Venda de Cota' digite b "
+                    "body": "Dúvidas frequentes: \n\na. Aquisição de cota \nb. Venda de Cota \nc. Compra de cota terceiro \nd. Fotografias no clube (como funciona)? \ne. Falar com um Atendente \n\n Informe a opção desejada digitando apenas a letra.\nEx: 'Venda de Cota' digite b "
+                  }
+                },
+              }).catch(error => {
+                console.error("Erro ao enviar mensagem:", error);
+              });
+            }
+
+            if (message.text.body == 'd') {
+              axios({
+                method: "POST",
+                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+                data: {
+                  "messaging_product": "whatsapp",
+                  "recipient_type": "individual",
+                  "to": message.from,
+                  "text": {
+                    "preview_url": true,
+                    "body": "*- Como funciona a questão das fotografias no clube?* \n\nO procedimento para as fotos são:\n\n*SÓCIO*\nO fotógrafo vem na secretaria junto ao associado para fazer o seu cadastro e receber o cartão para entrar ao clube para fazer as fotos.\n\n*NÃO SÓCIO*\nO fotógrafo deve vir na secretaria fazer seu cadastro e apresentar a documentação das pessoas que ele vai fotografar, pra que possamos cadastrar todos e fazer o cartão para entrada.\nÉ cobrado o valor de 30 reais de cada um (fotógrafo e as pessoas a qual forem participar do ensaio, no máximo 4 acompanhantes)\n\nAs fotos podem ser feitas por um período de 3 horas a partir dos seguintes horários:\n\nSegunda-feira: 15h as 17hrs.\nTerça a Sexta: de 6h as 17hrs.\n\nO cadastro é feito na secretaria em nosso horário de funcionamento\nSegunda a sexta - 8:30 às 18:15h."
+                  }
+                },
+              }).catch(error => {
+                console.error("Erro ao enviar mensagem:", error);
+              });
+            }
+
+            if (message.text.body == 'e') {
+              axios({
+                method: "POST",
+                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+                data: {
+                  "messaging_product": "whatsapp",
+                  "recipient_type": "individual",
+                  "to": message.from,
+                  "text": {
+                    "preview_url": true,
+                    "body": "Por favor entrar em contato diretamente com a secretaria pelo WhatsApp (33)9994-1053"
                   }
                 },
               }).catch(error => {
