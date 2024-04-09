@@ -164,7 +164,7 @@ const handleWebhook = (req, res) => {
                   "to": message.from,
                   "text": {
                     "preview_url": true,
-                    "body": "Dúvidas frequentes: \n\na. Aquisição de cota \nb. Venda de Cota \nc. Compra de cota terceiro \nd. Fotografias no clube (como funciona)? \ne. Falar com um Atendente \n\n Informe a opção desejada digitando apenas a letra.\nEx: 'Venda de Cota' digite b "
+                    "body": "Modalidades: \n\nf. Natação/Hidroginástica\ng. Futebol/Futsal/Goleiro/Vôlei Feminino\nh. Karatê/Judô/Aikido/Jiu-Jitsu/Pickleball\ni. Tênis/Basquete\nj. Treinamento funcional adulto e kids\nk. Ballet/Jazz/Fit Dance\n\n"
                   }
                 },
               }).catch(error => {
@@ -206,7 +206,7 @@ const handleWebhook = (req, res) => {
                   "to": message.from,
                   "text": {
                     "preview_url": true,
-                    "body": "Por favor entrar em contato diretamente com a secretaria pelo WhatsApp (33)9994-1053"
+                    "body": "Por favor entrar em contato diretamente com a secretaria pelo WhatsApp +55 33 9994-1053"
                   }
                 },
               }).catch(error => {
