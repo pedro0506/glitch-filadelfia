@@ -48,7 +48,7 @@ const handleWebhook = (req, res) => {
       const message = req.body.entry[0].changes[0].value.messages[0];
       console.log("MESSAGE_RECEBIDA" + JSON.stringify(message, null, 2));
     
-      if (message && message.type === "text") {
+      if (message && message.type === "text" && message.text.body == 'crwa') {
         const business_phone_number_id = req.body.entry[0].changes[0].value.metadata.phone_number_id;
     
         // Verificar se a mensagem já foi tratada
