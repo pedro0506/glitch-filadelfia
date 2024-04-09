@@ -58,29 +58,29 @@ const handleWebhook = (req, res) => {
           handledMessages[message.id] = true;
 
           // Verificar se a mensagem contém "Menu" para enviar o template "menu"
-          if (message.text.body.includes('Menu')) {
-            axios({
-              method: "POST",
-              url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
-              headers: {
-                Authorization: `Bearer ${token}`,
-              },
-              data: {
-                "messaging_product": "whatsapp",
-                "recipient_type": "individual",
-                "to": message.from,
-                "type": "template",
-                "template": {
-                  "name": "menu",
-                  "language": {
-                    "code": "pt_BR"
-                  }
-                }
-              },
-            }).catch(error => {
-              console.error("Erro ao enviar mensagem:", error);
-            });
-          }
+          // if (message.text.body.includes('Menu')) {
+          //   axios({
+          //     method: "POST",
+          //     url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+          //     headers: {
+          //       Authorization: `Bearer ${token}`,
+          //     },
+          //     data: {
+          //       "messaging_product": "whatsapp",
+          //       "recipient_type": "individual",
+          //       "to": message.from,
+          //       "type": "template",
+          //       "template": {
+          //         "name": "menu",
+          //         "language": {
+          //           "code": "pt_BR"
+          //         }
+          //       }
+          //     },
+          //   }).catch(error => {
+          //     console.error("Erro ao enviar mensagem:", error);
+          //   });
+          // }
 
           // Verificar se é hora de enviar o template "hello"
           const currentTime = Date.now();
