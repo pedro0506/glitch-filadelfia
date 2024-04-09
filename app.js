@@ -110,7 +110,7 @@ const handleWebhook = (req, res) => {
             }
 
             //regra 4
-            if (message.text.body == 'crwa') {
+            //if (message.text.body == 'crwa') {
               axios({
                 method: "POST",
                 url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
@@ -170,7 +170,7 @@ const handleWebhook = (req, res) => {
               }).catch(error => {
                 console.error("Erro ao enviar mensagem:", error);
               });
-            }
+            //}
 
             if (message.text.body == '5') {
               axios({
