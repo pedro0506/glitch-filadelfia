@@ -151,6 +151,27 @@ const handleWebhook = (req, res) => {
               });
             }
 
+            if (message.text.body == '6') {
+              axios({
+                method: "POST",
+                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+                data: {
+                  "messaging_product": "whatsapp",
+                  "recipient_type": "individual",
+                  "to": message.from,
+                  "text": {
+                    "preview_url": true,
+                    "body": "Dúvidas frequentes: \n\na. Aquisição de cota \nb. Venda de Cota \nc. Compra de cota terceiro \nd. Fotografias no clube (como funciona)? \ne. Falar com um Atendente \n\n Informe a opção desejada digitando apenas a letra.\nEx: 'Venda de Cota' digite b "
+                  }
+                },
+              }).catch(error => {
+                console.error("Erro ao enviar mensagem:", error);
+              });
+            }
+
             if (message.text.body == 'd') {
               axios({
                 method: "POST",
