@@ -47,74 +47,81 @@ const handleWebhook = (req, res) => {
     if (req.body.entry && req.body.entry[0].changes[0].value.messages[0]) {
       const message = req.body.entry[0].changes[0].value.messages[0];
       console.log("MESSAGE_RECEBIDA" + JSON.stringify(message, null, 2));
-
+    
       if (message && message.type === "text") {
-        const business_phone_number_id =
-          req.body.entry[0].changes[0].value.metadata.phone_number_id;
-
+        const business_phone_number_id = req.body.entry[0].changes[0].value.metadata.phone_number_id;
+    
         // Verificar se a mensagem já foi tratada
         if (!handledMessages[message.id]) {
           // Marcar a mensagem como tratada
           handledMessages[message.id] = true;
-
-          // Verificar se a mensagem contém "Menu" para enviar o template "menu"
-          // if (message.text.body.includes('Menu')) {
-          //   axios({
-          //     method: "POST",
-          //     url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
-          //     headers: {
-          //       Authorization: `Bearer ${token}`,
-          //     },
-          //     data: {
-          //       "messaging_product": "whatsapp",
-          //       "recipient_type": "individual",
-          //       "to": message.from,
-          //       "type": "template",
-          //       "template": {
-          //         "name": "menu",
-          //         "language": {
-          //           "code": "pt_BR"
-          //         }
-          //       }
-          //     },
-          //   }).catch(error => {
-          //     console.error("Erro ao enviar mensagem:", error);
-          //   });
-          // }
-
-          // Verificar se é hora de enviar o template "hello"
+    
+          // Calcular a diferença entre o timestamp atual e o timestamp da mensagem
+          const messageTimestamp = message.timestamp * 1000; // Convertendo para milissegundos
           const currentTime = Date.now();
-          // if (
-          //   (!lastHelloSent[message.from] || (currentTime - lastHelloSent[message.from] > 3600000)) // Enviar apenas uma vez por hora
-          // ) {
-          //   axios({
-          //     method: "POST",
-          //     url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
-          //     headers: {
-          //       Authorization: `Bearer ${token}`,
-          //     },
-          //     data: {
-          //       "messaging_product": "whatsapp",
-          //       "recipient_type": "individual",
-          //       "to": message.from,
-          //       "type": "template",
-          //       "template": {
-          //         "name": "hello",
-          //         "language": {
-          //           "code": "pt_BR"
-          //         }
-          //       }
-          //     },
-          //   }).then(() => {
-          //     // Registrar o momento em que o template "hello" foi enviado
-          //     lastHelloSent[message.from] = currentTime;
-          //   }).catch(error => {
-          //     console.error("Erro ao enviar mensagem:", error);
-          //   });
-          // }
+          const timeDifference = currentTime - messageTimestamp;
+    
+          // Verificar se a diferença de tempo é menor que 5 minutos
+          if (timeDifference < 300000) {
+            // Verificar se a mensagem contém "Menu" para enviar o template "menu"
+            if (message.text.body.includes('Menu')) {
+              axios({
+                method: "POST",
+                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+                data: {
+                  "messaging_product": "whatsapp",
+                  "recipient_type": "individual",
+                  "to": message.from,
+                  "type": "template",
+                  "template": {
+                    "name": "menu",
+                    "language": {
+                      "code": "pt_BR"
+                    }
+                  }
+                },
+              }).catch(error => {
+                console.error("Erro ao enviar mensagem:", error);
+              });
+            }
+    
+            // Verificar se é hora de enviar o template "hello"
+            if (
+              (!lastHelloSent[message.from] || (currentTime - lastHelloSent[message.from] > 3600000)) // Enviar apenas uma vez por hora
+            ) {
+              axios({
+                method: "POST",
+                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+                data: {
+                  "messaging_product": "whatsapp",
+                  "recipient_type": "individual",
+                  "to": message.from,
+                  "type": "template",
+                  "template": {
+                    "name": "hello",
+                    "language": {
+                      "code": "pt_BR"
+                    }
+                  }
+                },
+              }).then(() => {
+                // Registrar o momento em que o template "hello" foi enviado
+                lastHelloSent[message.from] = currentTime;
+              }).catch(error => {
+                console.error("Erro ao enviar mensagem:", error);
+              });
+            }
+          }
         }
       }
     }
+    
 
 
     if (
