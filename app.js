@@ -132,7 +132,7 @@ const handleWebhook = (req, res) => {
                           "text": "Clique na opção abaixo para visualizar informações."
                       },
                       "footer": {
-                          "text": ""
+                          "text": "Atensiosamente, Secretaria"
                       },
                       "action": {
                           "button": "Eventos",
