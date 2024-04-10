@@ -231,7 +231,7 @@ const handleWebhook = (req, res) => {
               });
             }
 
-            if (message.text.body && message.text.body == '3') {
+            if (message.text.body && message.text.body == '4') {
               axios({
                 method: "POST",
                 url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
