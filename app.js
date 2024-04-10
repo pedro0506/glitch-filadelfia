@@ -286,29 +286,79 @@ const handleWebhook = (req, res) => {
             }
 
             
-
-            
-
             if (message.text.body && message.text.body == '5') {
               axios({
                 method: "POST",
                 url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
                 headers: {
                   Authorization: `Bearer ${token}`,
+                  ContentType: 'application/json',
                 },
                 data: {
                   "messaging_product": "whatsapp",
                   "recipient_type": "individual",
                   "to": message.from,
-                  "text": {
-                    "preview_url": true,
-                    "body": "Dúvidas frequentes: \n\na. Aquisição de cota \nb. Venda de Cota \nc. Compra de cota terceiro \nd. Fotografias no clube (como funciona)? \ne. Falar com um Atendente \n\n Informe a opção desejada digitando apenas a letra.\nEx: 'Venda de Cota' digite b "
-                  }
-                },
+                  "type": "interactive",
+                  "interactive": {
+                      "type": "list",
+                      "header": {
+                          "type": "text",
+                          "text": "SOCIEDADE RECREATIVA FILADÉLFIA"
+                      },
+                      "body": {
+                          "text": "Suporte"
+                      },
+                      "footer": {
+                          "text": "clique no botão para visualizar as opções."
+                      },
+                      "action": {
+                          "button": "Abrir menu",
+                          "sections": [
+                              {
+                                  "title": "Dúvidas Frequentes",
+                                  "rows": [
+                                      {
+                                          "id": "aquisicao",
+                                          "title": "Aquisição de Cota",
+                                          "description": ""
+                                      },
+                                      {
+                                        "id": "venda",
+                                        "title": "Venda de Cota",
+                                        "description": ""
+                                      },
+                                      {
+                                        "id": "compra",
+                                        "title": "Compra de Cota para terceiro",
+                                        "description": ""
+                                      },
+                                      {
+                                        "id": "fotografias",
+                                        "title": "Fotografias no clube (como funciona?)",
+                                        "description": ""
+                                      },
+                                      
+                                  ]
+                              },
+                              {
+                                "title": "Falar com um Atendente",
+                                "rows": [
+                                    {
+                                        "id": "atendente",
+                                        "title": "Telefone",
+                                        "description": ""
+                                    },
+                                  ]
+                            },
+                            ]
+                      }
+                   }
+                 },
               }).catch(error => {
                 console.error("Erro ao enviar mensagem:", error);
               });
             }
+
 
             if (message.text.body && message.text.body == '6') {
               axios({
@@ -316,167 +366,126 @@ const handleWebhook = (req, res) => {
                 url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
                 headers: {
                   Authorization: `Bearer ${token}`,
+                  ContentType: 'application/json',
                 },
                 data: {
                   "messaging_product": "whatsapp",
                   "recipient_type": "individual",
                   "to": message.from,
-                  "text": {
-                    "preview_url": true,
-                    "body": "Modalidades: \n\nf. Natação/Hidroginástica\ng. Futebol/Futsal/Goleiro/Vôlei Feminino\nh. Karatê/Judô/Aikido/Jiu-Jitsu/Pickleball\ni. Tênis/Basquete\nj. Treinamento funcional adulto e kids\nk. Ballet/Jazz/Fit Dance\n\n"
-                  }
-                },
+                  "type": "interactive",
+                  "interactive": {
+                      "type": "list",
+                      "header": {
+                          "type": "text",
+                          "text": "SOCIEDADE RECREATIVA FILADÉLFIA"
+                      },
+                      "body": {
+                          "text": "Esportes"
+                      },
+                      "footer": {
+                          "text": "clique no botão para visualizar as opções."
+                      },
+                      "action": {
+                          "button": "Abrir menu",
+                          "sections": [
+                              {
+                                  "title": "Modalidades",
+                                  "rows": [
+                                      {
+                                          "id": "natacao",
+                                          "title": "Natação/Hidroginástica",
+                                          "description": ""
+                                      },
+                                      {
+                                        "id": "futebol",
+                                        "title": "Futebol/Futsal/Goleiro/Vôlei Feminino",
+                                        "description": ""
+                                      },
+                                      {
+                                        "id": "karate",
+                                        "title": "Karatê/Judô/Aikido/Jiu-Jitsu/Pickleball",
+                                        "description": ""
+                                      },
+                                      {
+                                        "id": "tenis",
+                                        "title": "Tênis/Basquete",
+                                        "description": ""
+                                      },
+                                      {
+                                        "id": "treinamento",
+                                        "title": "Treinamento funcional adulto e kids",
+                                        "description": ""
+                                      },
+                                      {
+                                        "id": "bale",
+                                        "title": "Ballet/Jazz/Fit Dance",
+                                        "description": ""
+                                      },
+                                      
+                                  ]
+                              },
+                              {
+                                "title": "Horiários",
+                                "rows": [
+                                    {
+                                        "id": "hora_esp",
+                                        "title": "Horários esportes",
+                                        "description": ""
+                                    },
+                                  ]
+                              },
+                              {
+                                "title": "Valores",
+                                "rows": [
+                                    {
+                                        "id": "valores",
+                                        "title": "Valores esportes",
+                                        "description": ""
+                                    },
+                                  ]
+                              },
+                              {
+                                "title": "Contato",
+                                "rows": [
+                                    {
+                                        "id": "contato_esp",
+                                        "title": "Telefone/Esportes",
+                                        "description": ""
+                                    },
+                                  ]
+                              },
+                            ]
+                      }
+                   }
+                 },
               }).catch(error => {
                 console.error("Erro ao enviar mensagem:", error);
               });
             }
+            
 
-            if (message.text.body && message.text.body == 'd') {
-              axios({
-                method: "POST",
-                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
-                headers: {
-                  Authorization: `Bearer ${token}`,
-                },
-                data: {
-                  "messaging_product": "whatsapp",
-                  "recipient_type": "individual",
-                  "to": message.from,
-                  "text": {
-                    "preview_url": true,
-                    "body": "*- Como funciona a questão das fotografias no clube?* \n\nO procedimento para as fotos são:\n\n*SÓCIO*\nO fotógrafo vem na secretaria junto ao associado para fazer o seu cadastro e receber o cartão para entrar ao clube para fazer as fotos.\n\n*NÃO SÓCIO*\nO fotógrafo deve vir na secretaria fazer seu cadastro e apresentar a documentação das pessoas que ele vai fotografar, pra que possamos cadastrar todos e fazer o cartão para entrada.\nÉ cobrado o valor de 30 reais de cada um (fotógrafo e as pessoas a qual forem participar do ensaio, no máximo 4 acompanhantes)\n\nAs fotos podem ser feitas por um período de 3 horas a partir dos seguintes horários:\n\nSegunda-feira: 15h as 17hrs.\nTerça a Sexta: de 6h as 17hrs.\n\nO cadastro é feito na secretaria em nosso horário de funcionamento\nSegunda a sexta - 8:30 às 18:15h."
-                  }
-                },
-              }).catch(error => {
-                console.error("Erro ao enviar mensagem:", error);
-              });
-            }
+            // if (message.text.body && message.text.body == '6') {
+            //   axios({
+            //     method: "POST",
+            //     url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+            //     headers: {
+            //       Authorization: `Bearer ${token}`,
+            //     },
+            //     data: {
+            //       "messaging_product": "whatsapp",
+            //       "recipient_type": "individual",
+            //       "to": message.from,
+            //       "text": {
+            //         "preview_url": true,
+            //         "body": "Modalidades: \n\nf. Natação/Hidroginástica\ng. Futebol/Futsal/Goleiro/Vôlei Feminino\nh. Karatê/Judô/Aikido/Jiu-Jitsu/Pickleball\ni. Tênis/Basquete\nj. Treinamento funcional adulto e kids\nk. Ballet/Jazz/Fit Dance\n\n"
+            //       }
+            //     },
+            //   }).catch(error => {
+            //     console.error("Erro ao enviar mensagem:", error);
+            //   });
+            // }
 
-            if (message.text.body && message.text.body == 'e') {
-              axios({
-                method: "POST",
-                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
-                headers: {
-                  Authorization: `Bearer ${token}`,
-                },
-                data: {
-                  "messaging_product": "whatsapp",
-                  "recipient_type": "individual",
-                  "to": message.from,
-                  "text": {
-                    "preview_url": true,
-                    "body": "Por favor entrar em contato diretamente com a secretaria pelo WhatsApp +55 33 9994-1053"
-                  }
-                },
-              }).catch(error => {
-                console.error("Erro ao enviar mensagem:", error);
-              });
-            }
-
-            if (message.text.body && message.text.body == 'f') {
-              axios({
-                method: "POST",
-                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
-                headers: {
-                  Authorization: `Bearer ${token}`,
-                },
-                data: {
-                  "messaging_product": "whatsapp",
-                  "recipient_type": "individual",
-                  "to": message.from,
-                  "text": {
-                    "preview_url": true,
-                    "body": "Veja esse item no WhatsApp: https://wa.me/p/7138771676213415/553399294013\nDescrição: NATAÇÃO/HIDROGINASTICA"
-                  }
-                },
-              }).catch(error => {
-                console.error("Erro ao enviar mensagem:", error);
-              });
-            }
-
-            if (message.text.body && message.text.body == 'g') {
-              axios({
-                method: "POST",
-                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
-                headers: {
-                  Authorization: `Bearer ${token}`,
-                },
-                data: {
-                  "messaging_product": "whatsapp",
-                  "recipient_type": "individual",
-                  "to": message.from,
-                  "text": {
-                    "preview_url": true,
-                    "body": "Veja esse item no WhatsApp: https://wa.me/p/6922069664508728/553399294013\nDescrição: FUTEBOL/FUTSAL/GOLEIRO/VOLEI FEMININO"
-                  }
-                },
-              }).catch(error => {
-                console.error("Erro ao enviar mensagem:", error);
-              });
-            }
-
-            if (message.text.body && message.text.body == 'j') {
-              axios({
-                method: "POST",
-                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
-                headers: {
-                  Authorization: `Bearer ${token}`,
-                },
-                data: {
-                  "messaging_product": "whatsapp",
-                  "recipient_type": "individual",
-                  "to": message.from,
-                  "text": {
-                    "preview_url": true,
-                    "body": "Veja esse item no WhatsApp: https://wa.me/p/6981547348639403/553399294013\nDescrição: TREINAMENTO FUNCIONAL ADULTO E KIDS/ PETECA"
-                  }
-                },
-              }).catch(error => {
-                console.error("Erro ao enviar mensagem:", error);
-              });
-            }
-
-            if (message.text.body && message.text.body == 'i') {
-              axios({
-                method: "POST",
-                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
-                headers: {
-                  Authorization: `Bearer ${token}`,
-                },
-                data: {
-                  "messaging_product": "whatsapp",
-                  "recipient_type": "individual",
-                  "to": message.from,
-                  "text": {
-                    "preview_url": true,
-                    "body": "Veja esse item no WhatsApp: https://wa.me/p/6964990853555235/553399294013\nDescrição: TENIS/ BASQUETE"
-                  }
-                },
-              }).catch(error => {
-                console.error("Erro ao enviar mensagem:", error);
-              });
-            }
-
-            if (message.text.body && message.text.body == 'k') {
-              axios({
-                method: "POST",
-                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
-                headers: {
-                  Authorization: `Bearer ${token}`,
-                },
-                data: {
-                  "messaging_product": "whatsapp",
-                  "recipient_type": "individual",
-                  "to": message.from,
-                  "text": {
-                    "preview_url": true,
-                    "body": "Veja esse item no WhatsApp: https://wa.me/p/24506368005678311/553399294013\nDescrição: BALLET/ JAZZ/ FIT DANCE"
-                  }
-                },
-              }).catch(error => {
-                console.error("Erro ao enviar mensagem:", error);
-              });
-            }
+          
 
           }
 
@@ -687,6 +696,216 @@ const handleWebhook = (req, res) => {
                   "text": {
                     "preview_url": true,
                     "body": "Sem registros de eventos."
+                  }
+                },
+              }).catch(error => {
+                console.error("Erro ao enviar mensagem:", error);
+              });
+            }
+
+            if (message.interactive.list_reply.id == 'aquisicao') {
+              axios({
+                method: "POST",
+                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+                data: {
+                  "messaging_product": "whatsapp",
+                  "recipient_type": "individual",
+                  "to": message.from,
+                  "text": {
+                    "preview_url": true,
+                    "body": "*Qual o valor da cota atualmente? Tem cota no clube disponível?*\n\nNo momento não está sendo vendido nenhuma cota diretamente do clube. \nPara adquirir uma cota atualmente é só a comum, onde é apenas por transferência de algum associado onde além do valor que ele avalia a sua cota, você também paga a taxa de transferência para o clube, no valor de 2.500,00 e os 5,00 de cada carteirinha. \n\nSe tiver interesse na cota comum, pode entrar no site onde tem as pessoas que tem interesse de vender. 😊\n\nSite: clubefiladelfia.com.br"
+                  }
+                },
+              }).catch(error => {
+                console.error("Erro ao enviar mensagem:", error);
+              });
+            }
+
+            if (message.interactive.list_reply.id == 'venda') {
+              axios({
+                method: "POST",
+                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+                data: {
+                  "messaging_product": "whatsapp",
+                  "recipient_type": "individual",
+                  "to": message.from,
+                  "text": {
+                    "preview_url": true,
+                    "body": "*Quero vender minha cota, qual o procedimento?*\n\nTemos a opção de colocar no nosso banco de cotas no site do clube, nos envie seu número e nome completo por gentileza direto para a atendente pelos números (33) 3276-7702 / 3276-7709"
+                  }
+                },
+              }).catch(error => {
+                console.error("Erro ao enviar mensagem:", error);
+              });
+            }
+
+            if (message.interactive.list_reply.id == 'compra') {
+              axios({
+                method: "POST",
+                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+                data: {
+                  "messaging_product": "whatsapp",
+                  "recipient_type": "individual",
+                  "to": message.from,
+                  "text": {
+                    "preview_url": true,
+                    "body": "*Comprei uma cota de terceiros, qual o procedimento agora?*\n\nÉ necessário que venha na secretaria para ser explicado o formulário de aquisição de cota que precisa ser preenchido e assinado pelo novo titular.\n\nHorário de funcionamento da secretaria\nSegunda a sexta - 8:30 às 18:15h\nSábado - 9:15 às 16:15h"
+                  }
+                },
+              }).catch(error => {
+                console.error("Erro ao enviar mensagem:", error);
+              });
+            }
+
+            if (message.interactive.list_reply.id == 'fotografias') {
+              axios({
+                method: "POST",
+                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+                data: {
+                  "messaging_product": "whatsapp",
+                  "recipient_type": "individual",
+                  "to": message.from,
+                  "text": {
+                    "preview_url": true,
+                    "body": "*- Como funciona a questão das fotografias no clube?* \n\nO procedimento para as fotos são:\n\n*SÓCIO*\nO fotógrafo vem na secretaria junto ao associado para fazer o seu cadastro e receber o cartão para entrar ao clube para fazer as fotos.\n\n*NÃO SÓCIO*\nO fotógrafo deve vir na secretaria fazer seu cadastro e apresentar a documentação das pessoas que ele vai fotografar, pra que possamos cadastrar todos e fazer o cartão para entrada.\nÉ cobrado o valor de 30 reais de cada um (fotógrafo e as pessoas a qual forem participar do ensaio, no máximo 4 acompanhantes)\n\nAs fotos podem ser feitas por um período de 3 horas a partir dos seguintes horários:\n\nSegunda-feira: 15h as 17hrs.\nTerça a Sexta: de 6h as 17hrs.\n\nO cadastro é feito na secretaria em nosso horário de funcionamento\nSegunda a sexta - 8:30 às 18:15h."
+                  }
+                },
+              }).catch(error => {
+                console.error("Erro ao enviar mensagem:", error);
+              });
+            }
+
+            if (message.interactive.list_reply.id == 'natacao') {
+              axios({
+                method: "POST",
+                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+                data: {
+                  "messaging_product": "whatsapp",
+                  "recipient_type": "individual",
+                  "to": message.from,
+                  "text": {
+                    "preview_url": true,
+                    "body": "Veja esse item no WhatsApp: https://wa.me/p/7138771676213415/553399294013\nDescrição: NATAÇÃO/HIDROGINASTICA"
+                  }
+                },
+              }).catch(error => {
+                console.error("Erro ao enviar mensagem:", error);
+              });
+            }
+
+            if (message.interactive.list_reply.id == 'futebol') {
+              axios({
+                method: "POST",
+                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+                data: {
+                  "messaging_product": "whatsapp",
+                  "recipient_type": "individual",
+                  "to": message.from,
+                  "text": {
+                    "preview_url": true,
+                    "body": "Veja esse item no WhatsApp: https://wa.me/p/6922069664508728/553399294013\nDescrição: FUTEBOL/FUTSAL/GOLEIRO/VOLEI FEMININO"
+                  }
+                },
+              }).catch(error => {
+                console.error("Erro ao enviar mensagem:", error);
+              });
+            }
+
+            if (message.interactive.list_reply.id == 'treinamento') {
+              axios({
+                method: "POST",
+                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+                data: {
+                  "messaging_product": "whatsapp",
+                  "recipient_type": "individual",
+                  "to": message.from,
+                  "text": {
+                    "preview_url": true,
+                    "body": "Veja esse item no WhatsApp: https://wa.me/p/6981547348639403/553399294013\nDescrição: TREINAMENTO FUNCIONAL ADULTO E KIDS/ PETECA"
+                  }
+                },
+              }).catch(error => {
+                console.error("Erro ao enviar mensagem:", error);
+              });
+            }
+
+            if (message.interactive.list_reply.id == 'tenis') {
+              axios({
+                method: "POST",
+                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+                data: {
+                  "messaging_product": "whatsapp",
+                  "recipient_type": "individual",
+                  "to": message.from,
+                  "text": {
+                    "preview_url": true,
+                    "body": "Veja esse item no WhatsApp: https://wa.me/p/6964990853555235/553399294013\nDescrição: TENIS/ BASQUETE"
+                  }
+                },
+              }).catch(error => {
+                console.error("Erro ao enviar mensagem:", error);
+              });
+            }
+
+            if (message.interactive.list_reply.id == 'bale') {
+              axios({
+                method: "POST",
+                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+                data: {
+                  "messaging_product": "whatsapp",
+                  "recipient_type": "individual",
+                  "to": message.from,
+                  "text": {
+                    "preview_url": true,
+                    "body": "Veja esse item no WhatsApp: https://wa.me/p/24506368005678311/553399294013\nDescrição: BALLET/ JAZZ/ FIT DANCE"
+                  }
+                },
+              }).catch(error => {
+                console.error("Erro ao enviar mensagem:", error);
+              });
+            }
+
+            if (message.interactive.list_reply.id == 'contato_esp') {
+              axios({
+                method: "POST",
+                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+                data: {
+                  "messaging_product": "whatsapp",
+                  "recipient_type": "individual",
+                  "to": message.from,
+                  "text": {
+                    "preview_url": true,
+                    "body": "Informações sobre esportes enviar mensagem para o número +55 33 9994-1053"
                   }
                 },
               }).catch(error => {
