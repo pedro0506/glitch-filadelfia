@@ -99,6 +99,7 @@ const handleWebhook = (req, res) => {
                 data: {
                   "messaging_product": "whatsapp",
                   "recipient_type": "individual",
+                  "to": message.from,
                   "type": "interactive",
                   "interactive": {
                       "type": "list",
