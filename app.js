@@ -89,6 +89,22 @@ const handleWebhook = (req, res) => {
                 console.error("Erro ao enviar mensagem:", error);
               });
             }
+            
+            //verificando CPF
+            if (message.text.body){
+              const strippedBody = message.body.replace(/\s/g, '');
+              if (strippedBody.length === 11) {
+                  // Verificando se a mensagem contém apenas números
+                  if (/^\d+$/.test(strippedBody)) {
+                      console.log('A mensagem contém apenas números e tem 11 caracteres:', strippedBody);
+                      // Aqui você pode adicionar qualquer lógica adicional que desejar
+                  } else {
+                      console.log('A mensagem não contém apenas números.');
+                  }
+              } else {
+                  console.log('A mensagem não tem 11 caracteres.');
+              }
+            }
 
             if (message.text.body && message.text.body == '1') {
               axios({
