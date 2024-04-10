@@ -65,7 +65,7 @@ const handleWebhook = (req, res) => {
           // Verificar se a diferença de tempo é menor que 5 minutos
           if (timeDifference < 300000) {
             // Verificar se a mensagem contém "Menu" para enviar o template "menu"
-            if (message.text.body.includes('Menu')) {
+            if (message.text.body && message.text.body.includes('Menu')) {
               axios({
                 method: "POST",
                 url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
@@ -89,7 +89,7 @@ const handleWebhook = (req, res) => {
               });
             }
 
-            if (message.text.body == '1') {
+            if (message.text.body && message.text.body == '1') {
               axios({
                 method: "POST",
                 url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
@@ -286,7 +286,7 @@ const handleWebhook = (req, res) => {
               });
             }
 
-            if (message.text.body == '3') {
+            if (message.text.body && message.text.body == '3') {
               axios({
                 method: "POST",
                 url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
@@ -307,7 +307,7 @@ const handleWebhook = (req, res) => {
               });
             }
 
-            if (message.text.body == '4') {
+            if (message.text.body && message.text.body == '4') {
               axios({
                 method: "POST",
                 url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
@@ -328,7 +328,7 @@ const handleWebhook = (req, res) => {
               });
             }
 
-            if (message.text.body == '5') {
+            if (message.text.body && message.text.body == '5') {
               axios({
                 method: "POST",
                 url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
@@ -349,7 +349,7 @@ const handleWebhook = (req, res) => {
               });
             }
 
-            if (message.text.body == '6') {
+            if (message.text.body && message.text.body == '6') {
               axios({
                 method: "POST",
                 url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
@@ -370,7 +370,7 @@ const handleWebhook = (req, res) => {
               });
             }
 
-            if (message.text.body == 'd') {
+            if (message.text.body && message.text.body == 'd') {
               axios({
                 method: "POST",
                 url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
@@ -391,7 +391,7 @@ const handleWebhook = (req, res) => {
               });
             }
 
-            if (message.text.body == 'e') {
+            if (message.text.body && message.text.body == 'e') {
               axios({
                 method: "POST",
                 url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
@@ -412,7 +412,7 @@ const handleWebhook = (req, res) => {
               });
             }
 
-            if (message.text.body == 'f') {
+            if (message.text.body && message.text.body == 'f') {
               axios({
                 method: "POST",
                 url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
@@ -433,7 +433,7 @@ const handleWebhook = (req, res) => {
               });
             }
 
-            if (message.text.body == 'g') {
+            if (message.text.body && message.text.body == 'g') {
               axios({
                 method: "POST",
                 url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
@@ -454,7 +454,7 @@ const handleWebhook = (req, res) => {
               });
             }
 
-            if (message.text.body == 'j') {
+            if (message.text.body && message.text.body == 'j') {
               axios({
                 method: "POST",
                 url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
@@ -475,7 +475,7 @@ const handleWebhook = (req, res) => {
               });
             }
 
-            if (message.text.body == 'i') {
+            if (message.text.body && message.text.body == 'i') {
               axios({
                 method: "POST",
                 url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
@@ -496,7 +496,7 @@ const handleWebhook = (req, res) => {
               });
             }
 
-            if (message.text.body == 'k') {
+            if (message.text.body && message.text.body == 'k') {
               axios({
                 method: "POST",
                 url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
