@@ -97,7 +97,21 @@ const handleWebhook = (req, res) => {
                   // Verificando se a mensagem contém apenas números
                   if (/^\d+$/.test(strippedBody)) {
                       console.log('A mensagem contém apenas números e tem 11 caracteres:', strippedBody);
-                      // Aqui você pode adicionar qualquer lógica adicional que desejar
+                      //http://52.200.130.214/api/public/getCodTitular
+                      axios({
+                        method: "POST",
+                        url: `http://52.200.130.214/api/public/getCodTitular`,
+                        data: {
+                          "cpf": strippedBody
+                        },
+                      }).then((response) => {
+                        // Registrar o momento em que o template "hello" foi enviado
+                        console.log(response);
+                        
+                      }).catch(error => {
+                        console.error("Erro ao enviar mensagem:", error);
+                      });
+                      
                   } else {
                       console.log('A mensagem não contém apenas números.');
                   }
