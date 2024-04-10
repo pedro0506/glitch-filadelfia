@@ -1035,7 +1035,7 @@ const handleWebhook = (req, res) => {
             if (
               (!lastHelloSent[message.from] || (currentTime - lastHelloSent[message.from] > 3600000)) // Enviar apenas uma vez por hora
             ) {
-              if(message.text.body == 'crwa'){
+              //if(message.text.body == 'crwa'){
                 axios({
                   method: "POST",
                   url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
@@ -1060,7 +1060,7 @@ const handleWebhook = (req, res) => {
                 }).catch(error => {
                   console.error("Erro ao enviar mensagem:", error);
                 });
-              }
+              //}
             }
           }
         }
