@@ -120,7 +120,7 @@ const handleWebhook = (req, res) => {
                               "to": message.from,
                               "text": {
                                 "preview_url": true,
-                                "body": "Você possui um boleto registrado que está disponível no link abaixo: \n\n https://clubefiladelfia.com.br/boletos/boleto-club-filadelfia-"+response.data+".pdf\n\n Se você já efetuou o pagamento basta desconsiderar."
+                                "body": "Você possui um boleto registrado que está disponível no link abaixo: \n\nhttps://clubefiladelfia.com.br/boletos/boleto-club-filadelfia-"+response.data+".pdf\n\nSe você já efetuou o pagamento basta desconsiderar."
                               }
                             },
                           }).catch(error => {
@@ -139,7 +139,7 @@ const handleWebhook = (req, res) => {
                               "to": message.from,
                               "text": {
                                 "preview_url": true,
-                                "body": "Não encontramos nenhum boleto registrado em seu CPF. \n\n Para mais informações entre em contato com a secretaria\n Contato/Telefones: (33) 3276-7702 / 3276-7709"
+                                "body": "Não encontramos nenhum boleto registrado em seu CPF. \n\nPara mais informações entre em contato com a secretaria\nContato/Telefones: (33) 3276-7702 / 3276-7709"
                               }
                             },
                           }).catch(error => {
