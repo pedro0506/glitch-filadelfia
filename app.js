@@ -357,7 +357,8 @@ const handleWebhook = (req, res) => {
 
     if (
       req.body.entry &&
-      req.body.entry[0].changes[0].value.statuses[0].recipient_id
+      req.body.entry[0].changes[0] &&
+      req.body.entry[0].changes[0].value.statuses[0]
     ) {
             
       let recipient_id = req.body.entry[0].changes[0].value.statuses[0].recipient_id;
