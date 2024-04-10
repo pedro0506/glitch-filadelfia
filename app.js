@@ -117,7 +117,7 @@ const handleWebhook = (req, res) => {
                           "button": "Abrir menu",
                           "sections": [
                               {
-                                  "title": "Horários de funcionamento",
+                                  "title": "Horários",
                                   "rows": [
                                       {
                                           "id": "Secretaria",
