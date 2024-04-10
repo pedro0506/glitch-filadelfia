@@ -462,30 +462,54 @@ const handleWebhook = (req, res) => {
                 console.error("Erro ao enviar mensagem:", error);
               });
             }
-            
 
-            // if (message.text.body && message.text.body == '6') {
-            //   axios({
-            //     method: "POST",
-            //     url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
-            //     headers: {
-            //       Authorization: `Bearer ${token}`,
-            //     },
-            //     data: {
-            //       "messaging_product": "whatsapp",
-            //       "recipient_type": "individual",
-            //       "to": message.from,
-            //       "text": {
-            //         "preview_url": true,
-            //         "body": "Modalidades: \n\nf. Natação/Hidroginástica\ng. Futebol/Futsal/Goleiro/Vôlei Feminino\nh. Karatê/Judô/Aikido/Jiu-Jitsu/Pickleball\ni. Tênis/Basquete\nj. Treinamento funcional adulto e kids\nk. Ballet/Jazz/Fit Dance\n\n"
-            //       }
-            //     },
-            //   }).catch(error => {
-            //     console.error("Erro ao enviar mensagem:", error);
-            //   });
-            // }
-
-          
+            if (message.text.body && message.text.body == '7') {
+              axios({
+                method: "POST",
+                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                  ContentType: 'application/json',
+                },
+                data: {
+                  "messaging_product": "whatsapp",
+                  "recipient_type": "individual",
+                  "to": message.from,
+                  "type": "interactive",
+                  "interactive": {
+                      "type": "list",
+                      "header": {
+                          "type": "text",
+                          "text": "SOCIEDADE RECREATIVA FILADÉLFIA"
+                      },
+                      "body": {
+                          "text": "Convites"
+                      },
+                      "footer": {
+                          "text": "clique no botão para visualizar as opções."
+                      },
+                      "action": {
+                          "button": "Abrir menu",
+                          "sections": [
+                              {
+                                  "title": "Convites",
+                                  "rows": [
+                                      {
+                                          "id": "convite",
+                                          "title": "Convite Day use ",
+                                          "description": "e Hidroginástica"
+                                      },
+                                  ]
+                              },
+                              
+                            ]
+                      }
+                   }
+                 },
+              }).catch(error => {
+                console.error("Erro ao enviar mensagem:", error);
+              });
+            }         
 
           }
 
@@ -913,7 +937,26 @@ const handleWebhook = (req, res) => {
               });
             }
 
-
+            if (message.interactive.list_reply.id == 'convite') {
+              axios({
+                method: "POST",
+                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+                data: {
+                  "messaging_product": "whatsapp",
+                  "recipient_type": "individual",
+                  "to": message.from,
+                  "text": {
+                    "preview_url": true,
+                    "body": "Veja esse item no WhatsApp: https://wa.me/p/6839102372836189/553399294013"
+                  }
+                },
+              }).catch(error => {
+                console.error("Erro ao enviar mensagem:", error);
+              });
+            }
 
 
             
