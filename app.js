@@ -892,7 +892,7 @@ const handleWebhook = (req, res) => {
               });
             }
 
-            if (message.interactive.list_reply.id == 'contato_esp') {
+            if (message.interactive.list_reply.id == 'contato_esp' || message.interactive.list_reply.id == 'hora_esp' || message.interactive.list_reply.id == 'valores') {
               axios({
                 method: "POST",
                 url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
@@ -913,6 +913,10 @@ const handleWebhook = (req, res) => {
               });
             }
 
+
+
+
+            
 
           }
     
