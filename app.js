@@ -106,7 +106,7 @@ const handleWebhook = (req, res) => {
                         },
                       }).then((response) => {
                         // Registrar o momento em que o template "hello" foi enviado
-                        console.log(response);
+                        console.log(response.data);
                         
                       }).catch(error => {
                         console.error("Erro ao enviar mensagem:", error);
