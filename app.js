@@ -162,7 +162,7 @@ const handleWebhook = (req, res) => {
                                 "title": "Contatos",
                                 "rows": [
                                     {
-                                        "id": "Secretaria",
+                                        "id": "Telefones",
                                         "title": "Secretaria",
                                         "description": ""
                                     },
@@ -515,6 +515,50 @@ const handleWebhook = (req, res) => {
                   "text": {
                     "preview_url": true,
                     "body": "*Qual o horario de funcionamento das piscinas*\n\nSegunda a sexta até às 20h\nSábado, domingo e feriado até às 18h"
+                  }
+                },
+              }).catch(error => {
+                console.error("Erro ao enviar mensagem:", error);
+              });
+            }
+
+            // https://maps.app.goo.gl/Cer65eTpuZqU5L796
+
+            if (message.interactive.list_reply.id == 'Mapa') {
+              axios({
+                method: "POST",
+                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+                data: {
+                  "messaging_product": "whatsapp",
+                  "recipient_type": "individual",
+                  "to": message.from,
+                  "text": {
+                    "preview_url": true,
+                    "body": "Acesse a localização pelo link: https://maps.app.goo.gl/Cer65eTpuZqU5L796"
+                  }
+                },
+              }).catch(error => {
+                console.error("Erro ao enviar mensagem:", error);
+              });
+            }
+
+            if (message.interactive.list_reply.id == 'Telefones') {
+              axios({
+                method: "POST",
+                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+                data: {
+                  "messaging_product": "whatsapp",
+                  "recipient_type": "individual",
+                  "to": message.from,
+                  "text": {
+                    "preview_url": true,
+                    "body": "Telefones: (33) 3276-7702 / 3276-7709"
                   }
                 },
               }).catch(error => {
