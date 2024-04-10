@@ -48,7 +48,7 @@ const handleWebhook = (req, res) => {
       const message = req.body.entry[0].changes[0].value.messages[0];
       console.log("MESSAGE_RECEBIDA" + JSON.stringify(message, null, 2));
     
-      if (message && message.type === "text" && message.text.body == 'crwa') {
+      if (message && message.type === "text") {
         const business_phone_number_id = req.body.entry[0].changes[0].value.metadata.phone_number_id;
     
         // Verificar se a mensagem já foi tratada
@@ -83,6 +83,96 @@ const handleWebhook = (req, res) => {
                     }
                   }
                 },
+              }).catch(error => {
+                console.error("Erro ao enviar mensagem:", error);
+              });
+            }
+
+            if (message.text.body == '1') {
+              axios({
+                method: "POST",
+                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+                data: {
+                  "messaging_product": "whatsapp",
+                  "recipient_type": "individual",
+                  "type": "interactive",
+                  "interactive": {
+                      "type": "list",
+                      "header": {
+                          "type": "text",
+                          "text": "SOCIEDADE RECREATIVA FILADÉLFIA"
+                      },
+                      "body": {
+                          "text": "Informações Gerais"
+                      },
+                      "footer": {
+                          "text": "clique no botão para visualizar as opções."
+                      },
+                      "action": {
+                          "button": "Abrir menu",
+                          "sections": [
+                              {
+                                  "title": "Horários de funcionamento",
+                                  "rows": [
+                                      {
+                                          "id": "Secretaria",
+                                          "title": "",
+                                          "description": ""
+                                      },
+                                      {
+                                          "id": "Clube",
+                                          "title": "",
+                                          "description": ""
+                                      },
+                                      {
+                                          "id": "Sauna",
+                                          "title": "",
+                                          "description": ""
+                                      },
+                                      {
+                                          "id": "Churrasqueiras",
+                                          "title": "",
+                                          "description": ""
+                                      },
+                                      {
+                                          "id": "Piscinas",
+                                          "title": "",
+                                          "description": ""
+                                      }
+                                  ]
+                              },
+                              {
+                                  "title": "Localização",
+                                  "rows": [
+                                      {
+                                          "id": "mapa",
+                                          "title": "",
+                                          "description": ""
+                                      },
+                                  ]
+                              },
+                              {
+                                "title": "Contatos",
+                                "rows": [
+                                    {
+                                        "id": "Secretaria",
+                                        "title": "",
+                                        "description": ""
+                                    },
+                                    {
+                                      "id": "Outros",
+                                      "title": "",
+                                      "description": ""
+                                  },
+                                ]
+                              }
+                            ]
+                      }
+                   }
+                 },
               }).catch(error => {
                 console.error("Erro ao enviar mensagem:", error);
               });
@@ -323,30 +413,32 @@ const handleWebhook = (req, res) => {
             if (
               (!lastHelloSent[message.from] || (currentTime - lastHelloSent[message.from] > 3600000)) // Enviar apenas uma vez por hora
             ) {
-              axios({
-                method: "POST",
-                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
-                headers: {
-                  Authorization: `Bearer ${token}`,
-                },
-                data: {
-                  "messaging_product": "whatsapp",
-                  "recipient_type": "individual",
-                  "to": message.from,
-                  "type": "template",
-                  "template": {
-                    "name": "hello",
-                    "language": {
-                      "code": "pt_BR"
+              if(message.text.body == 'crwa'){
+                axios({
+                  method: "POST",
+                  url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                  headers: {
+                    Authorization: `Bearer ${token}`,
+                  },
+                  data: {
+                    "messaging_product": "whatsapp",
+                    "recipient_type": "individual",
+                    "to": message.from,
+                    "type": "template",
+                    "template": {
+                      "name": "hello",
+                      "language": {
+                        "code": "pt_BR"
+                      }
                     }
-                  }
-                },
-              }).then(() => {
-                // Registrar o momento em que o template "hello" foi enviado
-                lastHelloSent[message.from] = currentTime;
-              }).catch(error => {
-                console.error("Erro ao enviar mensagem:", error);
-              });
+                  },
+                }).then(() => {
+                  // Registrar o momento em que o template "hello" foi enviado
+                  lastHelloSent[message.from] = currentTime;
+                }).catch(error => {
+                  console.error("Erro ao enviar mensagem:", error);
+                });
+              }
             }
           }
         }
