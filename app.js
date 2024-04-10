@@ -107,6 +107,26 @@ const handleWebhook = (req, res) => {
                       }).then((response) => {
                         // Registrar o momento em que o template "hello" foi enviado
                         console.log(response.data);
+                        if(response.data != '' && response.data != false){
+                          axios({
+                            method: "POST",
+                            url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                            headers: {
+                              Authorization: `Bearer ${token}`,
+                            },
+                            data: {
+                              "messaging_product": "whatsapp",
+                              "recipient_type": "individual",
+                              "to": message.from,
+                              "text": {
+                                "preview_url": true,
+                                "body": "Você possui um boleto registrado que está disponível no link abaixo: \n\n https://clubefiladelfia.com.br/boletos/boleto-club-filadelfia-"+response.data+".pdf\n\n Se você já efetuou o pagamento basta desconsiderar."
+                              }
+                            },
+                          }).catch(error => {
+                            console.error("Erro ao enviar mensagem:", error);
+                          });
+                        }
                         
                       }).catch(error => {
                         console.error("Erro ao enviar mensagem:", error);
