@@ -315,7 +315,7 @@ const handleWebhook = (req, res) => {
                           "button": "Abrir menu",
                           "sections": [
                               {
-                                  "title": "Dúvidas Frequentes",
+                                  "title": "Dúvidas",
                                   "rows": [
                                       {
                                           "id": "aquisicao",
@@ -341,7 +341,7 @@ const handleWebhook = (req, res) => {
                                   ]
                               },
                               {
-                                "title": "Falar com um Atendente",
+                                "title": "Falar/Atendente",
                                 "rows": [
                                     {
                                         "id": "atendente",
