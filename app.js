@@ -92,7 +92,7 @@ const handleWebhook = (req, res) => {
             
             //verificando CPF
             if (message.text.body){
-              const strippedBody = message.body.replace(/\s/g, '');
+              const strippedBody = message.text.body.replace(/\s/g, '');
               if (strippedBody.length === 11) {
                   // Verificando se a mensagem contém apenas números
                   if (/^\d+$/.test(strippedBody)) {
