@@ -329,12 +329,12 @@ const handleWebhook = (req, res) => {
                                       },
                                       {
                                         "id": "compra",
-                                        "title": "Compra de Cota para terceiro",
+                                        "title": "Cota para terceiro",
                                         "description": ""
                                       },
                                       {
                                         "id": "fotografias",
-                                        "title": "Fotografias no clube (como funciona?)",
+                                        "title": "Fotografias no clube",
                                         "description": ""
                                       },
                                       
