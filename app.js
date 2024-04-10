@@ -180,7 +180,7 @@ const handleWebhook = (req, res) => {
               });
             }
 
-            if (message.text.body == 'Secretaria') {
+            if (message.interactive.list_reply.id == 'Secretaria') {
               axios({
                 method: "POST",
                 url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
@@ -201,7 +201,7 @@ const handleWebhook = (req, res) => {
               });
             }
 
-            if (message.text.body == 'Clube') {
+            if (message.interactive.list_reply.id == 'Clube') {
               axios({
                 method: "POST",
                 url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
@@ -222,7 +222,7 @@ const handleWebhook = (req, res) => {
               });
             }
 
-            if (message.text.body == 'Sauna') {
+            if (message.interactive.list_reply.id == 'Sauna') {
               axios({
                 method: "POST",
                 url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
@@ -243,7 +243,7 @@ const handleWebhook = (req, res) => {
               });
             }
 
-            if (message.text.body == 'Churrasqueiras') {
+            if (message.interactive.list_reply.id == 'Churrasqueiras') {
               axios({
                 method: "POST",
                 url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
@@ -264,7 +264,7 @@ const handleWebhook = (req, res) => {
               });
             }
 
-            if (message.text.body == 'Piscinas') {
+            if (message.interactive.list_reply.id == 'Piscinas') {
               axios({
                 method: "POST",
                 url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
