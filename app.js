@@ -497,7 +497,7 @@ const handleWebhook = (req, res) => {
                                       {
                                           "id": "convite",
                                           "title": "Convite Day use ",
-                                          "description": "e Hidroginástica"
+                                          "description": ""
                                       },
                                   ]
                               },
