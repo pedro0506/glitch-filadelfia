@@ -188,20 +188,69 @@ const handleWebhook = (req, res) => {
                 url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
                 headers: {
                   Authorization: `Bearer ${token}`,
+                  ContentType: 'application/json',
                 },
                 data: {
                   "messaging_product": "whatsapp",
                   "recipient_type": "individual",
                   "to": message.from,
-                  "text": {
-                    "preview_url": true,
-                    "body": "*- Como faz e onde faz a reserva da churrasqueira? Tem algum valor diferenciado?*\n\nA reserva da churrasqueira é feita no dia em que vai usar, por ordem de chegada, na portaria do estacionamento a partir das 6h da manhã.\nReserva feita pelo titular ou conjuge mediante apresentação da carteirinha\n\n*A partir de Segunda Feira dia 18/12 Preço novo*\n\n-Convite para churrasqueira válidos de segunda a sexta. \n-Deve ser retirado para os convidados na secretaria apresentando a senha da churrasqueira e documento pessoal de cada convidado.\n-Máximo de 15 pessoas.\n-Valor do convite 20,00 por pessoa.\n-Entrada do convidado liberada a partir das 19hrs.\n-A partir de 5 anos paga.\n-Cantor e churrasqueiro deve ser feita a compra do convite."
-                  }
-                },
+                  "type": "interactive",
+                  "interactive": {
+                      "type": "list",
+                      "header": {
+                          "type": "text",
+                          "text": "SOCIEDADE RECREATIVA FILADÉLFIA"
+                      },
+                      "body": {
+                          "text": "Reservas"
+                      },
+                      "footer": {
+                          "text": "clique no botão para visualizar as opções."
+                      },
+                      "action": {
+                          "button": "Abrir menu",
+                          "sections": [
+                              {
+                                  "title": "Reservas",
+                                  "rows": [
+                                      {
+                                          "id": "Reserva_Churras",
+                                          "title": "Churrasqueiras",
+                                          "description": ""
+                                      },
+                                      
+                                  ]
+                              },
+                              
+                            ]
+                      }
+                   }
+                 },
               }).catch(error => {
                 console.error("Erro ao enviar mensagem:", error);
               });
             }
+
+            // if (message.text.body && message.text.body == '3') {
+            //   axios({
+            //     method: "POST",
+            //     url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+            //     headers: {
+            //       Authorization: `Bearer ${token}`,
+            //     },
+            //     data: {
+            //       "messaging_product": "whatsapp",
+            //       "recipient_type": "individual",
+            //       "to": message.from,
+            //       "text": {
+            //         "preview_url": true,
+            //         "body": "*- Como faz e onde faz a reserva da churrasqueira? Tem algum valor diferenciado?*\n\nA reserva da churrasqueira é feita no dia em que vai usar, por ordem de chegada, na portaria do estacionamento a partir das 6h da manhã.\nReserva feita pelo titular ou conjuge mediante apresentação da carteirinha\n\n*A partir de Segunda Feira dia 18/12 Preço novo*\n\n-Convite para churrasqueira válidos de segunda a sexta. \n-Deve ser retirado para os convidados na secretaria apresentando a senha da churrasqueira e documento pessoal de cada convidado.\n-Máximo de 15 pessoas.\n-Valor do convite 20,00 por pessoa.\n-Entrada do convidado liberada a partir das 19hrs.\n-A partir de 5 anos paga.\n-Cantor e churrasqueiro deve ser feita a compra do convite."
+            //       }
+            //     },
+            //   }).catch(error => {
+            //     console.error("Erro ao enviar mensagem:", error);
+            //   });
+            // }
 
             if (message.text.body && message.text.body == '4') {
               axios({
@@ -558,13 +607,35 @@ const handleWebhook = (req, res) => {
                   "to": message.from,
                   "text": {
                     "preview_url": true,
-                    "body": "Telefones: (33) 3276-7702 / 3276-7709"
+                    "body": "Contato/Telefones: (33) 3276-7702 / 3276-7709"
                   }
                 },
               }).catch(error => {
                 console.error("Erro ao enviar mensagem:", error);
               });
             }
+
+            if (message.interactive.list_reply.id == 'Reserva_Churras') {
+              axios({
+                method: "POST",
+                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+                data: {
+                  "messaging_product": "whatsapp",
+                  "recipient_type": "individual",
+                  "to": message.from,
+                  "text": {
+                    "preview_url": true,
+                    "body": "*Como faz e onde faz a reserva da churrasqueira? Tem algum valor diferenciado?*\n\nA reserva da churrasqueira é feita no dia em que vai usar, por ordem de chegada, na portaria do estacionamento a partir das 6h da manhã.\nReserva feita pelo titular ou conjuge mediante apresentação da carteirinha\n*A partir de Segunda Feira dia 18/12 Preço novo*\n\n-Convite para churrasqueira válidos de segunda a sexta.\n-Deve ser retirado para os convidados na secretaria apresentando a senha da churrasqueira e documento pessoal de cada convidado.\n-Máximo de 15 pessoas.\n-Valor do convite 20,00 por pessoa.\n-Entrada do convidado liberada a partir das 19hrs.\n-A partir de 5 anos paga.\n-Cantor e churrasqueiro deve ser feita a compra do convite."
+                  }
+                },
+              }).catch(error => {
+                console.error("Erro ao enviar mensagem:", error);
+              });
+            }
+
 
           }
     
