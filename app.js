@@ -1026,6 +1026,27 @@ const handleWebhook = (req, res) => {
               });
             }
 
+            if (message.interactive.list_reply.id == 'mensalidade') {
+              axios({
+                method: "POST",
+                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+                data: {
+                  "messaging_product": "whatsapp",
+                  "recipient_type": "individual",
+                  "to": message.from,
+                  "text": {
+                    "preview_url": true,
+                    "body": "Por favor informe seu CPF para que possamos buscar em nosso sistema. \n\n_Digite apenas números, EX: 12345678900_"
+                  }
+                },
+              }).catch(error => {
+                console.error("Erro ao enviar mensagem:", error);
+              });
+            }
+
 
             
 
