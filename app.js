@@ -231,47 +231,63 @@ const handleWebhook = (req, res) => {
               });
             }
 
-            // if (message.text.body && message.text.body == '3') {
-            //   axios({
-            //     method: "POST",
-            //     url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
-            //     headers: {
-            //       Authorization: `Bearer ${token}`,
-            //     },
-            //     data: {
-            //       "messaging_product": "whatsapp",
-            //       "recipient_type": "individual",
-            //       "to": message.from,
-            //       "text": {
-            //         "preview_url": true,
-            //         "body": "*- Como faz e onde faz a reserva da churrasqueira? Tem algum valor diferenciado?*\n\nA reserva da churrasqueira é feita no dia em que vai usar, por ordem de chegada, na portaria do estacionamento a partir das 6h da manhã.\nReserva feita pelo titular ou conjuge mediante apresentação da carteirinha\n\n*A partir de Segunda Feira dia 18/12 Preço novo*\n\n-Convite para churrasqueira válidos de segunda a sexta. \n-Deve ser retirado para os convidados na secretaria apresentando a senha da churrasqueira e documento pessoal de cada convidado.\n-Máximo de 15 pessoas.\n-Valor do convite 20,00 por pessoa.\n-Entrada do convidado liberada a partir das 19hrs.\n-A partir de 5 anos paga.\n-Cantor e churrasqueiro deve ser feita a compra do convite."
-            //       }
-            //     },
-            //   }).catch(error => {
-            //     console.error("Erro ao enviar mensagem:", error);
-            //   });
-            // }
-
-            if (message.text.body && message.text.body == '4') {
+            if (message.text.body && message.text.body == '3') {
               axios({
                 method: "POST",
                 url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
                 headers: {
                   Authorization: `Bearer ${token}`,
+                  ContentType: 'application/json',
                 },
                 data: {
                   "messaging_product": "whatsapp",
                   "recipient_type": "individual",
                   "to": message.from,
-                  "text": {
-                    "preview_url": true,
-                    "body": "Ainda nenhum evento disponível. \n\nInformações sobre eventos enviar mensagem para o número +55 33 9961-0892."
-                  }
-                },
+                  "type": "interactive",
+                  "interactive": {
+                      "type": "list",
+                      "header": {
+                          "type": "text",
+                          "text": "SOCIEDADE RECREATIVA FILADÉLFIA"
+                      },
+                      "body": {
+                          "text": "Eventos"
+                      },
+                      "footer": {
+                          "text": "clique no botão para visualizar as opções."
+                      },
+                      "action": {
+                          "button": "Abrir menu",
+                          "sections": [
+                              {
+                                  "title": "Eventos",
+                                  "rows": [
+                                      {
+                                          "id": "Calendario",
+                                          "title": "Calendário de Eventos",
+                                          "description": ""
+                                      },
+                                      {
+                                        "id": "Contato_evento",
+                                        "title": "Contato Eventos",
+                                        "description": ""
+                                    },
+                                      
+                                  ]
+                              },
+                              
+                            ]
+                      }
+                   }
+                 },
               }).catch(error => {
                 console.error("Erro ao enviar mensagem:", error);
               });
             }
+
+            
+
+            
 
             if (message.text.body && message.text.body == '5') {
               axios({
@@ -629,6 +645,48 @@ const handleWebhook = (req, res) => {
                   "text": {
                     "preview_url": true,
                     "body": "*Como faz e onde faz a reserva da churrasqueira? Tem algum valor diferenciado?*\n\nA reserva da churrasqueira é feita no dia em que vai usar, por ordem de chegada, na portaria do estacionamento a partir das 6h da manhã.\nReserva feita pelo titular ou conjuge mediante apresentação da carteirinha\n*A partir de Segunda Feira dia 18/12 Preço novo*\n\n-Convite para churrasqueira válidos de segunda a sexta.\n-Deve ser retirado para os convidados na secretaria apresentando a senha da churrasqueira e documento pessoal de cada convidado.\n-Máximo de 15 pessoas.\n-Valor do convite 20,00 por pessoa.\n-Entrada do convidado liberada a partir das 19hrs.\n-A partir de 5 anos paga.\n-Cantor e churrasqueiro deve ser feita a compra do convite."
+                  }
+                },
+              }).catch(error => {
+                console.error("Erro ao enviar mensagem:", error);
+              });
+            }
+
+            if (message.interactive.list_reply.id == 'Contato_evento') {
+              axios({
+                method: "POST",
+                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+                data: {
+                  "messaging_product": "whatsapp",
+                  "recipient_type": "individual",
+                  "to": message.from,
+                  "text": {
+                    "preview_url": true,
+                    "body": "Informações sobre eventos enviar mensagem para o número +55 33 9961-0892."
+                  }
+                },
+              }).catch(error => {
+                console.error("Erro ao enviar mensagem:", error);
+              });
+            }
+
+            if (message.interactive.list_reply.id == 'Calendario') {
+              axios({
+                method: "POST",
+                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+                data: {
+                  "messaging_product": "whatsapp",
+                  "recipient_type": "individual",
+                  "to": message.from,
+                  "text": {
+                    "preview_url": true,
+                    "body": "Sem registros de eventos."
                   }
                 },
               }).catch(error => {
