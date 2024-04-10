@@ -182,6 +182,74 @@ const handleWebhook = (req, res) => {
               });
             }
 
+            if (message.text.body && message.text.body == '2') {
+              axios({
+                method: "POST",
+                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                  ContentType: 'application/json',
+                },
+                data: {
+                  "messaging_product": "whatsapp",
+                  "recipient_type": "individual",
+                  "to": message.from,
+                  "type": "interactive",
+                  "interactive": {
+                      "type": "list",
+                      "header": {
+                          "type": "text",
+                          "text": "SOCIEDADE RECREATIVA FILADÉLFIA"
+                      },
+                      "body": {
+                          "text": "Pagamentos"
+                      },
+                      "footer": {
+                          "text": "clique no botão para visualizar as opções."
+                      },
+                      "action": {
+                          "button": "Abrir menu",
+                          "sections": [
+                              {
+                                  "title": "Mensalidades",
+                                  "rows": [
+                                      {
+                                          "id": "mensalidade",
+                                          "title": "Mensalidades",
+                                          "description": ""
+                                      },
+                                  ]
+                              },
+                              {
+                                "title": "Taxas Extras",
+                                "rows": [
+                                    {
+                                        "id": "taxas",
+                                        "title": "Taxas Extras",
+                                        "description": ""
+                                    },
+                                ]
+                              },
+                              {
+                                "title": "Pagamento",
+                                "rows": [
+                                    {
+                                        "id": "pagamento",
+                                        "title": "Formas de Pagamento",
+                                        "description": ""
+                                    },
+                                ]
+                              },
+                              
+                            ]
+                      }
+                   }
+                 },
+              }).catch(error => {
+                console.error("Erro ao enviar mensagem:", error);
+              });
+            }
+
             if (message.text.body && message.text.body == '3') {
               axios({
                 method: "POST",
