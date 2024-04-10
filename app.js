@@ -393,18 +393,18 @@ const handleWebhook = (req, res) => {
                                   "rows": [
                                       {
                                           "id": "natacao",
-                                          "title": "Natação/Hidroginástica",
-                                          "description": ""
+                                          "title": "Natação",
+                                          "description": "e Hidroginástica"
                                       },
                                       {
                                         "id": "futebol",
-                                        "title": "Futebol/Futsal/Goleiro/Vôlei Feminino",
-                                        "description": ""
+                                        "title": "Futebol",
+                                        "description": "Futsal/Goleiro/Vôlei Feminino"
                                       },
                                       {
                                         "id": "karate",
-                                        "title": "Karatê/Judô/Aikido/Jiu-Jitsu/Pickleball",
-                                        "description": ""
+                                        "title": "Karatê/Judô",
+                                        "description": "Aikido/Jiu-Jitsu/Pickleball"
                                       },
                                       {
                                         "id": "tenis",
@@ -413,12 +413,12 @@ const handleWebhook = (req, res) => {
                                       },
                                       {
                                         "id": "treinamento",
-                                        "title": "Treinamento funcional adulto e kids",
-                                        "description": ""
+                                        "title": "Treinamento",
+                                        "description": "Funcional adulto e kids"
                                       },
                                       {
                                         "id": "bale",
-                                        "title": "Ballet/Jazz/Fit Dance",
+                                        "title": "Ballet/Jazz/FitDance",
                                         "description": ""
                                       },
                                       
@@ -429,7 +429,7 @@ const handleWebhook = (req, res) => {
                                 "rows": [
                                     {
                                         "id": "hora_esp",
-                                        "title": "Horários esportes",
+                                        "title": "Horários",
                                         "description": ""
                                     },
                                   ]
@@ -619,7 +619,7 @@ const handleWebhook = (req, res) => {
               });
             }
 
-            if (message.interactive.list_reply.id == 'Telefones') {
+            if (message.interactive.list_reply.id == 'Telefones' || message.interactive.list_reply.id == 'atendente') {
               axios({
                 method: "POST",
                 url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
