@@ -66,7 +66,7 @@ const handleWebhook = (req, res) => {
           if (timeDifference < 300000) {
             // Verificar se a mensagem contém "Menu" para enviar o template "menu"
             if(message.type === "text"){
-            if (message.text.body && message.text.body.includes('Menu')) {
+            if (message.text.body && message.text.body.includes('Menu') || message.text.body.includes('menu')) {
               axios({
                 method: "POST",
                 url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
@@ -493,7 +493,7 @@ const handleWebhook = (req, res) => {
                                   ]
                               },
                               {
-                                "title": "Horiários",
+                                "title": "Horários",
                                 "rows": [
                                     {
                                         "id": "hora_esp",
