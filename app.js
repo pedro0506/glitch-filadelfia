@@ -94,6 +94,7 @@ const handleWebhook = (req, res) => {
                 url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
                 headers: {
                   Authorization: `Bearer ${token}`,
+                  ContentType: 'application/json',
                 },
                 data: {
                   "messaging_product": "whatsapp",
@@ -119,27 +120,27 @@ const handleWebhook = (req, res) => {
                                   "rows": [
                                       {
                                           "id": "Secretaria",
-                                          "title": "",
+                                          "title": "Secretaria",
                                           "description": ""
                                       },
                                       {
                                           "id": "Clube",
-                                          "title": "",
+                                          "title": "Clube",
                                           "description": ""
                                       },
                                       {
                                           "id": "Sauna",
-                                          "title": "",
+                                          "title": "Sauna",
                                           "description": ""
                                       },
                                       {
                                           "id": "Churrasqueiras",
-                                          "title": "",
+                                          "title": "Churrasqueiras",
                                           "description": ""
                                       },
                                       {
                                           "id": "Piscinas",
-                                          "title": "",
+                                          "title": "Piscinas",
                                           "description": ""
                                       }
                                   ]
@@ -148,8 +149,8 @@ const handleWebhook = (req, res) => {
                                   "title": "Localização",
                                   "rows": [
                                       {
-                                          "id": "mapa",
-                                          "title": "",
+                                          "id": "Mapa",
+                                          "title": "Mapa",
                                           "description": ""
                                       },
                                   ]
@@ -159,12 +160,12 @@ const handleWebhook = (req, res) => {
                                 "rows": [
                                     {
                                         "id": "Secretaria",
-                                        "title": "",
+                                        "title": "Secretaria",
                                         "description": ""
                                     },
                                     {
                                       "id": "Outros",
-                                      "title": "",
+                                      "title": "Secretaria",
                                       "description": ""
                                   },
                                 ]
