@@ -126,6 +126,25 @@ const handleWebhook = (req, res) => {
                           }).catch(error => {
                             console.error("Erro ao enviar mensagem:", error);
                           });
+                        }else{
+                          axios({
+                            method: "POST",
+                            url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                            headers: {
+                              Authorization: `Bearer ${token}`,
+                            },
+                            data: {
+                              "messaging_product": "whatsapp",
+                              "recipient_type": "individual",
+                              "to": message.from,
+                              "text": {
+                                "preview_url": true,
+                                "body": "Não encontramos nenhum boleto registrado em seu CPF. \n\n Para mais informações entre em contato com a secretaria\n Contato/Telefones: (33) 3276-7702 / 3276-7709"
+                              }
+                            },
+                          }).catch(error => {
+                            console.error("Erro ao enviar mensagem:", error);
+                          });
                         }
                         
                       }).catch(error => {
