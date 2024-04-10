@@ -166,7 +166,7 @@ const handleWebhook = (req, res) => {
                                     },
                                     {
                                       "id": "Outros",
-                                      "title": "Secretaria",
+                                      "title": "Outros",
                                       "description": ""
                                   },
                                 ]
@@ -175,6 +175,111 @@ const handleWebhook = (req, res) => {
                       }
                    }
                  },
+              }).catch(error => {
+                console.error("Erro ao enviar mensagem:", error);
+              });
+            }
+
+            if (message.text.body == 'Secretaria') {
+              axios({
+                method: "POST",
+                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+                data: {
+                  "messaging_product": "whatsapp",
+                  "recipient_type": "individual",
+                  "to": message.from,
+                  "text": {
+                    "preview_url": true,
+                    "body": "*Qual o horario de funcionamento da secretaria?*\n\nSegunda a sexta - 8:30 às 18:15h\nSábado - 9:15 às 16:15h"
+                  }
+                },
+              }).catch(error => {
+                console.error("Erro ao enviar mensagem:", error);
+              });
+            }
+
+            if (message.text.body == 'Clube') {
+              axios({
+                method: "POST",
+                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+                data: {
+                  "messaging_product": "whatsapp",
+                  "recipient_type": "individual",
+                  "to": message.from,
+                  "text": {
+                    "preview_url": true,
+                    "body": "*Qual o horario de funcionamento do clube?*\n\nSegunda-feira - 15:00 às 22:00h\nTerça a sexta-feira - 6:00 às 22:00h\nSábado, domingo e feriado - 6:00 às 19:00h"
+                  }
+                },
+              }).catch(error => {
+                console.error("Erro ao enviar mensagem:", error);
+              });
+            }
+
+            if (message.text.body == 'Sauna') {
+              axios({
+                method: "POST",
+                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+                data: {
+                  "messaging_product": "whatsapp",
+                  "recipient_type": "individual",
+                  "to": message.from,
+                  "text": {
+                    "preview_url": true,
+                    "body": "*Qual o horario de funcionamento da sauna?*\n\nSegunda a sexta-feira - 16:00 às 21:45h\nSábado, domingo e feriado - 11:00 às 18:45h"
+                  }
+                },
+              }).catch(error => {
+                console.error("Erro ao enviar mensagem:", error);
+              });
+            }
+
+            if (message.text.body == 'Churrasqueiras') {
+              axios({
+                method: "POST",
+                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+                data: {
+                  "messaging_product": "whatsapp",
+                  "recipient_type": "individual",
+                  "to": message.from,
+                  "text": {
+                    "preview_url": true,
+                    "body": "*Qual o horario de funcionamento das churrasqueiras?\n\nDe segunda a sexta até a 00:00\nSábado, domingo e feriado até as 19:00"
+                  }
+                },
+              }).catch(error => {
+                console.error("Erro ao enviar mensagem:", error);
+              });
+            }
+
+            if (message.text.body == 'Piscinas') {
+              axios({
+                method: "POST",
+                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+                data: {
+                  "messaging_product": "whatsapp",
+                  "recipient_type": "individual",
+                  "to": message.from,
+                  "text": {
+                    "preview_url": true,
+                    "body": "*Qual o horario de funcionamento das piscinas*\n\nSegunda a sexta até às 20h\nSábado, domingo e feriado até às 18h"
+                  }
+                },
               }).catch(error => {
                 console.error("Erro ao enviar mensagem:", error);
               });
