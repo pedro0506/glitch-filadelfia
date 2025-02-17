@@ -562,25 +562,16 @@ const handleWebhook = (req, res) => {
                                   ]
                               },
                               {
-                                "title": "Horários",
+                                "title": "Descontos",
                                 "rows": [
                                     {
-                                        "id": "hora_esp",
-                                        "title": "Horários",
+                                        "id": "desconto_esp",
+                                        "title": "Descontos no esporte",
                                         "description": ""
                                     },
                                   ]
                               },
-                              {
-                                "title": "Valores",
-                                "rows": [
-                                    {
-                                        "id": "valores",
-                                        "title": "Valores esportes",
-                                        "description": ""
-                                    },
-                                  ]
-                              },
+                              
                               {
                                 "title": "Contato",
                                 "rows": [
@@ -651,6 +642,103 @@ const handleWebhook = (req, res) => {
           }
 
           if(message.type === "interactive"){
+
+            if(message.interactive.list_reply.id == 'Calendario'){
+              axios({
+                method: "POST",
+                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                headers: {
+                  Authorization: `Bearer ${token}`
+                },
+                data: {
+                  "messaging_product": "whatsapp",
+                  "recipient_type": "individual",
+                  "to": message.from,
+                  "type": "interactive",
+                  "interactive": {
+                      "type": "list",
+                      "header": {
+                          "type": "text",
+                          "text": "SOCIEDADE RECREATIVA FILADÉLFIA"
+                      },
+                      "body": {
+                          "text": "Calendário"
+                      },
+                      "footer": {
+                          "text": "clique no botão para visualizar as opções."
+                      },
+                      "action": {
+                          "button": "Abrir menu",
+                          "sections": [
+                              {
+                                  "title": "Calendário",
+                                  "rows": [
+                                      // {
+                                      //     "id": "evento1",
+                                      //     "title": "Luau Filadelfia",
+                                      //     "description": "10 de Maio"
+                                      // },
+                                      // {
+                                      //   "id": "evento2",
+                                      //   "title": "Aniversario Filadelfia",
+                                      //   "description": "12 de Junho"
+                                      // },
+                                      
+                                  ]
+                              },
+                              
+                            ]
+                      }
+                   }
+                 },
+              }).catch(error => {
+                console.error("Erro ao enviar mensagem:", error);
+              });
+            }
+
+            if (message.interactive.list_reply.id == 'evento1') {
+              axios({
+                method: "POST",
+                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                  ContentType: 'application/json',
+                },
+                data: {
+                  "messaging_product": "whatsapp",
+                  "recipient_type": "individual",
+                  "to": message.from,
+                  "type": "image",
+                  "image": {
+                      "link": "https://clubefiladelfia.com.br/eventos/evento1.jpeg"
+                  }
+                },
+                
+              }).catch(error => {
+                console.error("Erro ao enviar mensagem:", error);
+              });
+            }
+
+            if (message.interactive.list_reply.id == 'evento2') {
+              axios({
+                method: "POST",
+                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+                data: {
+                  "messaging_product": "whatsapp",
+                  "recipient_type": "individual",
+                  "to": message.from,
+                  "type": "image",
+                  "image": {
+                      "link": "https://clubefiladelfia.com.br/eventos/evento2.jpeg"
+                  }
+                },
+              }).catch(error => {
+                console.error("Erro ao enviar mensagem:", error);
+              });
+            }
 
             if (message.interactive.list_reply.id == 'Secretaria') {
               axios({
@@ -843,26 +931,26 @@ const handleWebhook = (req, res) => {
               });
             }
 
-            if (message.interactive.list_reply.id == 'Calendario') {
-              axios({
-                method: "POST",
-                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
-                headers: {
-                  Authorization: `Bearer ${token}`,
-                },
-                data: {
-                  "messaging_product": "whatsapp",
-                  "recipient_type": "individual",
-                  "to": message.from,
-                  "text": {
-                    "preview_url": true,
-                    "body": "Sem registros de eventos."
-                  }
-                },
-              }).catch(error => {
-                console.error("Erro ao enviar mensagem:", error);
-              });
-            }
+            // if (message.interactive.list_reply.id == 'Calendario') {
+            //   axios({
+            //     method: "POST",
+            //     url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+            //     headers: {
+            //       Authorization: `Bearer ${token}`,
+            //     },
+            //     data: {
+            //       "messaging_product": "whatsapp",
+            //       "recipient_type": "individual",
+            //       "to": message.from,
+            //       "text": {
+            //         "preview_url": true,
+            //         "body": "Sem registros de eventos."
+            //       }
+            //     },
+            //   }).catch(error => {
+            //     console.error("Erro ao enviar mensagem:", error);
+            //   });
+            // }
 
             if (message.interactive.list_reply.id == 'aquisicao') {
               axios({
@@ -1011,6 +1099,27 @@ const handleWebhook = (req, res) => {
               });
             }
 
+            if (message.interactive.list_reply.id == 'karate') {
+              axios({
+                method: "POST",
+                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+                data: {
+                  "messaging_product": "whatsapp",
+                  "recipient_type": "individual",
+                  "to": message.from,
+                  "text": {
+                    "preview_url": true,
+                    "body": "Veja esse item no WhatsApp: https://wa.me/p/7167236810005298/553399294013\nDescrição: Karatê/Judô..."
+                  }
+                },
+              }).catch(error => {
+                console.error("Erro ao enviar mensagem:", error);
+              });
+            }
+
             if (message.interactive.list_reply.id == 'tenis') {
               axios({
                 method: "POST",
@@ -1046,6 +1155,27 @@ const handleWebhook = (req, res) => {
                   "text": {
                     "preview_url": true,
                     "body": "Veja esse item no WhatsApp: https://wa.me/p/24506368005678311/553399294013\nDescrição: BALLET/ JAZZ/ FIT DANCE"
+                  }
+                },
+              }).catch(error => {
+                console.error("Erro ao enviar mensagem:", error);
+              });
+            }
+
+            if (message.interactive.list_reply.id == 'desconto_esp') {
+              axios({
+                method: "POST",
+                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+                data: {
+                  "messaging_product": "whatsapp",
+                  "recipient_type": "individual",
+                  "to": message.from,
+                  "text": {
+                    "preview_url": true,
+                    "body": "Quando o aluno sendo associado ou não faz dois ou mais esportes ele possui 20% em cada modalidade.\nQuando um faz esporte e mais alguém da família, incluso na cota, cada um recebe 10% de desconto.\n"
                   }
                 },
               }).catch(error => {
