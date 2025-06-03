@@ -44,6 +44,30 @@ const handleWebhook = (req, res) => {
   let body = req.body;
 
   if (req.body.object) {
+          console.log(JSON.stringify(req.body, null, 2));
+          // axios({
+          //       method: "POST",
+          //       url: `https://crwa.com.br/provedor/webhook.php`,
+          //       headers: {
+          //         Authorization: `Bearer ${token}`,
+          //       },
+          //       data: JSON.stringify(req.body, null, 2),
+          //     }).catch(error => {
+          //       console.error("Erro ao enviar mensagem ao WebHook:", error);
+          //     });
+
+          axios({
+                method: "POST",
+                url: `https://clubefiladelfia.com.br/provedor/webhook.php`,
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+                data: JSON.stringify(req.body, null, 2),
+              }).catch(error => {
+                console.error("Erro ao enviar mensagem ao WebHook:", error);
+              });
+            
+
     if (req.body.entry && req.body.entry[0].changes[0].value.messages[0]) {
       const message = req.body.entry[0].changes[0].value.messages[0];
       
@@ -51,7 +75,7 @@ const handleWebhook = (req, res) => {
     
       if (message) {
         const business_phone_number_id = req.body.entry[0].changes[0].value.metadata.phone_number_id;
-    
+        console.log(business_phone_number_id);
         // Verificar se a mensagem já foi tratada
         if (!handledMessages[message.id]) {
           // Marcar a mensagem como tratada
@@ -88,6 +112,8 @@ const handleWebhook = (req, res) => {
               }).catch(error => {
                 console.error("Erro ao enviar mensagem:", error);
               });
+
+
             }
             
             //verificando CPF
@@ -97,10 +123,10 @@ const handleWebhook = (req, res) => {
                   // Verificando se a mensagem contém apenas números
                   if (/^\d+$/.test(strippedBody)) {
                       console.log('A mensagem contém apenas números e tem 11 caracteres:', strippedBody);
-                      //http://52.200.130.214/api/public/getCodTitular
+                      //http://3.92.23.237/api/public/getCodTitular
                       axios({
                         method: "POST",
-                        url: `http://52.200.130.214/api/public/getCodTitular`,
+                        url: `http://3.92.23.237/api/public/getCodTitular`,
                         data: {
                           "cpf": strippedBody
                         },
