@@ -1,8 +1,8 @@
 FROM node:20
 
-WORKDIR .
+WORKDIR /app
 
-COPY package.json .
+COPY . /app/
 
 RUN npm install
 
