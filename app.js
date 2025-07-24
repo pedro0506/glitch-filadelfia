@@ -123,10 +123,10 @@ const handleWebhook = (req, res) => {
                   // Verificando se a mensagem contém apenas números
                   if (/^\d+$/.test(strippedBody)) {
                     console.log('A mensagem contém apenas números e tem 11 caracteres:', strippedBody);
-                    //http://3.92.23.237/api/public/getCodTitular
+                    //https://boleto.clubefiladelfia.com.br/api/public/getCodTitular
                     axios({
                       method: "POST",
-                      url: `http://3.92.23.237/api/public/getCodTitular`,
+                      url: `https://boleto.clubefiladelfia.com.br/api/public/getCodTitular`,
                       data: {
                         "cpf": strippedBody
                       },
