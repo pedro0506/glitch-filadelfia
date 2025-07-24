@@ -131,6 +131,7 @@ const handleWebhook = (req, res) => {
                         "cpf": strippedBody
                       },
                     }).then((response) => {
+                      var mes_atual = moment().format('MM');
                       // Registrar o momento em que o template "hello" foi enviado
                       console.log(response.data);
                       if (response.data != '' && response.data != false) {
@@ -146,7 +147,7 @@ const handleWebhook = (req, res) => {
                             "to": message.from,
                             "text": {
                               "preview_url": true,
-                              "body": "Você possui um boleto registrado que está disponível no link abaixo: \n\nhttps://clubefiladelfia.com.br/boletos/boleto-club-filadelfia-" + response.data + ".pdf\n\nSe você já efetuou o pagamento basta desconsiderar."
+                              "body": "Você possui um boleto registrado que está disponível no link abaixo: \n\nhttps://boleto.clubefiladelfia.com.br/api/public/b?idt=jJTBjJpx3spukhKDLM8jJCCoSONs4Wex" + response.data + "&m="+mes_atual+"\n\nSe você já efetuou o pagamento basta desconsiderar."
                             }
                           },
                         }).catch(error => {
