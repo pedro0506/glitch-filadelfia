@@ -126,8 +126,26 @@ const handleWebhook = (req, res) => {
                 // a IA vai começar a conversar, e perguntar se o usuário quer acionar o menu. 
                 // nao querendo, ele fica com a IA
                 // aqui eu fico mandando para o n8n até ele digitar a palavra 'Menu' ou 'menu' 
-
-
+                // if (
+                //   (!lastHelloSent[message.from] || (currentTime - lastHelloSent[message.from] > 3600000)) // Enviar apenas uma vez por hora
+                // ) {
+                // verificar a mensagem tem ao minimo 3 caracteres
+                if (message.text.body.length >= 3) {
+                  axios({
+                    method: "POST",
+                    url: `https://n8n.crwa.com.br/webhook/273a3337-d114-4977-8351-a40819851cde`,
+                    headers: {
+                      "Content-Type": "application/json"
+                    },
+                    data: {
+                      "messaging_product": "whatsapp",
+                      "to": message.from,
+                      "message": message.text.body,
+                    },
+                  }).catch(error => {
+                    console.error("Erro ao enviar mensagem:", error);
+                  });
+                }
                 // *********************----------------------------***************************
                 // *********************----------------------------***************************
                 // *********************----------------------------***************************
@@ -1752,30 +1770,30 @@ Cota INDIVIDUAL - Como Funciona:
             ) {
               //Na nova automação, o invés de eu mandar o axios abaixo com a mensagem de boas vindas, eu mando la pro webhook N8N
               // assim quem abre o atendimento é a automação de lá. 
-              axios({
-                method: "POST",
-                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
-                headers: {
-                  Authorization: `Bearer ${token}`,
-                },
-                data: {
-                  "messaging_product": "whatsapp",
-                  "recipient_type": "individual",
-                  "to": message.from,
-                  "type": "template",
-                  "template": {
-                    "name": "hello",
-                    "language": {
-                      "code": "pt_BR"
-                    }
-                  }
-                },
-              }).then(() => {
-                // Registrar o momento em que o template "hello" foi enviado
-                lastHelloSent[message.from] = currentTime;
-              }).catch(error => {
-                console.error("Erro ao enviar mensagem:", error);
-              });
+              // axios({
+              //   method: "POST",
+              //   url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+              //   headers: {
+              //     Authorization: `Bearer ${token}`,
+              //   },
+              //   data: {
+              //     "messaging_product": "whatsapp",
+              //     "recipient_type": "individual",
+              //     "to": message.from,
+              //     "type": "template",
+              //     "template": {
+              //       "name": "hello",
+              //       "language": {
+              //         "code": "pt_BR"
+              //       }
+              //     }
+              //   },
+              // }).then(() => {
+              //   // Registrar o momento em que o template "hello" foi enviado
+              //   lastHelloSent[message.from] = currentTime;
+              // }).catch(error => {
+              //   console.error("Erro ao enviar mensagem:", error);
+              // });
               //}
             }
           }
