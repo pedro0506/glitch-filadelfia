@@ -1765,30 +1765,30 @@ Cota INDIVIDUAL - Como Funciona:
             ) {
               //Na nova automação, o invés de eu mandar o axios abaixo com a mensagem de boas vindas, eu mando la pro webhook N8N
               // assim quem abre o atendimento é a automação de lá. 
-              axios({
-                method: "POST",
-                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
-                headers: {
-                  Authorization: `Bearer ${token}`,
-                },
-                data: {
-                  "messaging_product": "whatsapp",
-                  "recipient_type": "individual",
-                  "to": message.from,
-                  "type": "template",
-                  "template": {
-                    "name": "hello",
-                    "language": {
-                      "code": "pt_BR"
-                    }
-                  }
-                },
-              }).then(() => {
-                // Registrar o momento em que o template "hello" foi enviado
-                lastHelloSent[message.from] = currentTime;
-              }).catch(error => {
-                console.error("Erro ao enviar mensagem:", error);
-              });
+              // axios({
+              //   method: "POST",
+              //   url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+              //   headers: {
+              //     Authorization: `Bearer ${token}`,
+              //   },
+              //   data: {
+              //     "messaging_product": "whatsapp",
+              //     "recipient_type": "individual",
+              //     "to": message.from,
+              //     "type": "template",
+              //     "template": {
+              //       "name": "hello",
+              //       "language": {
+              //         "code": "pt_BR"
+              //       }
+              //     }
+              //   },
+              // }).then(() => {
+              //   // Registrar o momento em que o template "hello" foi enviado
+              //   lastHelloSent[message.from] = currentTime;
+              // }).catch(error => {
+              //   console.error("Erro ao enviar mensagem:", error);
+              // });
               //}
             }
           }
