@@ -126,21 +126,26 @@ const handleWebhook = (req, res) => {
                 // a IA vai começar a conversar, e perguntar se o usuário quer acionar o menu. 
                 // nao querendo, ele fica com a IA
                 // aqui eu fico mandando para o n8n até ele digitar a palavra 'Menu' ou 'menu' 
-                axios({
-                  method: "POST",
-                  url: `https://n8n.crwa.com.br/webhook/273a3337-d114-4977-8351-a40819851cde`,
-                  headers: {
-                    "Content-Type": "application/json"
-                  },
-                  data: {
-                    "messaging_product": "whatsapp",
-                    "to": message.from,
-                    "message": message.text.body,
-                  },
-                }).catch(error => {
-                  console.error("Erro ao enviar mensagem:", error);
-                });
-
+                // if (
+                //   (!lastHelloSent[message.from] || (currentTime - lastHelloSent[message.from] > 3600000)) // Enviar apenas uma vez por hora
+                // ) {
+                // verificar a mensagem tem ao minimo 3 caracteres
+                if (message.text.body.length >= 3) {
+                  axios({
+                    method: "POST",
+                    url: `https://n8n.crwa.com.br/webhook/273a3337-d114-4977-8351-a40819851cde`,
+                    headers: {
+                      "Content-Type": "application/json"
+                    },
+                    data: {
+                      "messaging_product": "whatsapp",
+                      "to": message.from,
+                      "message": message.text.body,
+                    },
+                  }).catch(error => {
+                    console.error("Erro ao enviar mensagem:", error);
+                  });
+                }
                 // *********************----------------------------***************************
                 // *********************----------------------------***************************
                 // *********************----------------------------***************************
