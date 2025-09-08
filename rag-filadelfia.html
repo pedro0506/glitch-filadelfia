@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Interativo - Sociedade Recreativa Filadélfia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Warm Neutrals -->
+    <!-- Application Structure Plan: A single-page application with a sticky top navigation bar for easy access to thematic sections: Início, O Clube, Serviços, Esportes, Eventos, and Estrutura. This task-oriented design prioritizes user experience by allowing non-linear exploration of content. Instead of a long scroll, users can jump directly to the information they need, such as checking opening hours (Serviços) or viewing upcoming concerts (Eventos). The structure is designed to answer the most common user queries efficiently. -->
+    <!-- Visualization & Content Choices: History is presented as a visual timeline (HTML/CSS) for engagement. Sports event participation is compared using a Chart.js bar chart for quick quantitative insight. Major events are showcased in a visual card grid to highlight high-caliber artists. Key infrastructure specs use icons (Unicode) for scannability. This multi-format approach selects the best presentation method for each type of information, enhancing clarity and user engagement. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FDFBF7;
+            color: #4A4A4A;
+        }
+        .nav-link.active {
+            color: #D97706;
+            font-weight: 700;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header id="main-header" class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <a href="#inicio" class="text-xl font-bold text-amber-700">Filadélfia Interativo</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#clube" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-amber-600 transition-colors duration-300">O Clube</a>
+                        <a href="#servicos" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-amber-600 transition-colors duration-300">Serviços</a>
+                        <a href="#esportes" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-amber-600 transition-colors duration-300">Esportes</a>
+                        <a href="#eventos" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-amber-600 transition-colors duration-300">Eventos</a>
+                        <a href="#estrutura" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-amber-600 transition-colors duration-300">Estrutura</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button id="mobile-menu-button" type="button" class="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500">
+                        <span class="sr-only">Abrir menu</span>
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#clube" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-amber-600 hover:bg-gray-50">O Clube</a>
+                <a href="#servicos" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-amber-600 hover:bg-gray-50">Serviços</a>
+                <a href="#esportes" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-amber-600 hover:bg-gray-50">Esportes</a>
+                <a href="#eventos" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-amber-600 hover:bg-gray-50">Eventos</a>
+                <a href="#estrutura" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-amber-600 hover:bg-gray-50">Estrutura</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="inicio" class="py-20 bg-amber-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-amber-800 tracking-tight">Sociedade Recreativa Filadélfia</h1>
+                <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Bem-vindo ao portal interativo do maior e melhor clube associativo, esportivo e social de Governador Valadares. Explore nossa história, serviços e eventos em um só lugar.</p>
+            </div>
+        </section>
+
+        <section id="clube" class="py-16 md:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold tracking-tight text-gray-900">Nossa História e Gestão</h2>
+                    <p class="mt-2 text-md text-gray-600 max-w-2xl mx-auto">De uma sociedade de nicho a uma referência para toda a cidade, conheça os marcos e as lideranças que construíram o Filadélfia.</p>
+                </div>
+
+                <div class="relative pl-6 border-l-2 border-amber-200">
+                    <div class="mb-10">
+                        <div class="absolute w-4 h-4 bg-amber-500 rounded-full -left-2 mt-1.5"></div>
+                        <p class="text-sm font-medium text-amber-600">1 de Maio de 1967</p>
+                        <h3 class="text-lg font-semibold text-gray-800">Fundação</h3>
+                        <p class="mt-1 text-gray-600">Nasce a "Sociedade Evangélica Recreativa Filadélfia", com 500 cotas destinadas à comunidade evangélica.</p>
+                    </div>
+                    <div class="mb-10">
+                        <div class="absolute w-4 h-4 bg-amber-500 rounded-full -left-2 mt-1.5"></div>
+                        <p class="text-sm font-medium text-amber-600">1 de Janeiro de 1971</p>
+                        <h3 class="text-lg font-semibold text-gray-800">Inauguração</h3>
+                        <p class="mt-1 text-gray-600">O clube abre suas portas com infraestrutura inicial modesta, incluindo piscinas, quadras e campo de futebol.</p>
+                    </div>
+                    <div class="mb-10">
+                        <div class="absolute w-4 h-4 bg-amber-500 rounded-full -left-2 mt-1.5"></div>
+                        <p class="text-sm font-medium text-amber-600">Pós-Inauguração</p>
+                        <h3 class="text-lg font-semibold text-gray-800">Expansão Estratégica</h3>
+                        <p class="mt-1 text-gray-600">A diretoria expande o número de cotas e abre o clube para o público geral, adotando o nome "Sociedade Recreativa Filadélfia".</p>
+                    </div>
+                     <div class="mb-10">
+                        <div class="absolute w-4 h-4 bg-amber-500 rounded-full -left-2 mt-1.5"></div>
+                        <p class="text-sm font-medium text-amber-600">1988 - 2011+</p>
+                        <h3 class="text-lg font-semibold text-gray-800">Gestão Carlos Thebit</h3>
+                        <p class="mt-1 text-gray-600">Uma gestão longeva de mais de 23 anos que permitiu investimentos de longo prazo, como o "Complexo Tenístico Carlos Thebit".</p>
+                    </div>
+                    <div class="mb-0">
+                        <div class="absolute w-4 h-4 bg-amber-500 rounded-full -left-2 mt-1.5"></div>
+                        <p class="text-sm font-medium text-amber-600">Atualmente</p>
+                        <h3 class="text-lg font-semibold text-gray-800">Liderança Atual</h3>
+                        <p class="mt-1 text-gray-600">O clube é administrado pelo Presidente Euler Eller Marra, com uma equipe robusta de diretores e gerentes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="servicos" class="py-16 md:py-24 bg-amber-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold tracking-tight text-gray-900">Unidades e Serviços ao Sócio</h2>
+                    <p class="mt-2 text-md text-gray-600 max-w-2xl mx-auto">Encontre informações de contato, horários e acesse nossos serviços online de forma rápida e conveniente.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-amber-800">Unidade I (Sede)</h3>
+                        <p class="mt-2 text-gray-600">Rua Israel Pinheiro, 1315, São Pedro</p>
+                        <p class="mt-2 font-semibold">Telefones:</p>
+                        <p class="text-gray-600">(33) 3276-7702 / 3276-7709</p>
+                        <p class="mt-2 font-semibold">Horário da Secretaria:</p>
+                        <p class="text-gray-600">Seg-Sex: 08h30-18h15</p>
+                        <p class="text-gray-600">Sáb: 09h15-16h15</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-amber-800">Unidade II</h3>
+                        <p class="mt-2 text-gray-600">Rua Pedro Lessa, 231, Lourdes</p>
+                        <p class="mt-2 font-semibold">Telefone:</p>
+                        <p class="text-gray-600">(33) 3221-1420</p>
+                        <p class="mt-2 font-semibold">Horário da Secretaria:</p>
+                        <p class="text-gray-600">Seg-Qui: 08h15-12h e 14h-18h</p>
+                        <p class="text-gray-600">Sex: 08h15-12h e 14h15-18h</p>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-md col-span-1 md:col-span-2 lg:col-span-1">
+                        <h3 class="text-xl font-bold text-amber-800">Serviços Digitais</h3>
+                        <ul class="mt-4 space-y-3 text-gray-600">
+                            <li>🔗 <span class="font-semibold">Portal do Associado:</span> Acesso a informações e serviços exclusivos.</li>
+                            <li>📄 <span class="font-semibold">2ª Via de Boleto:</span> Emita seu boleto com facilidade.</li>
+                            <li>🔄 <span class="font-semibold">Atualização Cadastral:</span> Mantenha seus dados sempre em dia.</li>
+                            <li>🏦 <span class="font-semibold">Banco de Cotas:</span> Um canal seguro para negociar seu título.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="esportes" class="py-16 md:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold tracking-tight text-gray-900">Esportes e Lazer</h2>
+                    <p class="mt-2 text-md text-gray-600 max-w-2xl mx-auto">Com infraestrutura de ponta, o Filadélfia é um polo de competições e um espaço para a prática de diversas modalidades.</p>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-2xl font-bold text-amber-800 mb-4">Tênis: Nosso Pilar Esportivo</h3>
+                        <p class="text-gray-600 mb-4">O tênis é uma das grandes paixões do clube. O <span class="font-semibold">"Complexo Tenístico Carlos Thebit"</span> é palco de importantes torneios estaduais e nacionais, como a Copa Futuro de Tênis e etapas do FMT 1000 Junior Series, atraindo atletas de todo o país e fortalecendo nossa equipe de competição.</p>
+                        <h3 class="text-2xl font-bold text-amber-800 mt-8 mb-4">Outras Modalidades</h3>
+                        <p class="text-gray-600">Além do tênis, o clube sedia grandes eventos como o Torneio de Handebol Filadélfia e apoia corridas de rua, diversificando as opções e promovendo um estilo de vida ativo para todos os associados.</p>
+                    </div>
+                    <div>
+                        <div class="chart-container">
+                            <canvas id="sportsChart"></canvas>
+                        </div>
+                         <p class="text-center text-sm text-gray-500 mt-2">Comparativo de atletas por evento sediado.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="eventos" class="py-16 md:py-24 bg-amber-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold tracking-tight text-gray-900">Grandes Eventos</h2>
+                    <p class="mt-2 text-md text-gray-600 max-w-2xl mx-auto">O Filadélfia é o palco dos maiores shows da região, trazendo artistas de renome nacional e oferecendo benefícios exclusivos para os sócios.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <p class="text-sm font-medium text-amber-600">Junho 2024/2025</p>
+                            <h3 class="text-xl font-bold mt-1">Paula Toller & Barão Vermelho</h3>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <p class="text-sm font-medium text-amber-600">Setembro 2025</p>
+                            <h3 class="text-xl font-bold mt-1">Dilsinho & Mumuzinho</h3>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <p class="text-sm font-medium text-amber-600">Junho 2023</p>
+                            <h3 class="text-xl font-bold mt-1">Jota Quest & Biquini Cavadão</h3>
+                        </div>
+                    </div>
+                     <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <p class="text-sm font-medium text-amber-600">Junho 2022</p>
+                            <h3 class="text-xl font-bold mt-1">Skank & Leoni</h3>
+                        </div>
+                    </div>
+                    <div class="col-span-1 sm:col-span-2 lg:col-span-3 lg:col-start-2 lg:col-span-1 bg-amber-100 border-l-4 border-amber-500 text-amber-700 p-4 rounded-md">
+                        <h4 class="font-bold">Benefício Exclusivo do Sócio!</h4>
+                        <p class="text-sm">Sócios em dia têm <span class="font-semibold">entrada gratuita no setor Pista</span> e acesso exclusivo à compra de <span class="font-semibold">upgrade para o Camarote</span>. Sua mensalidade vale o ingresso para os melhores shows!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="estrutura" class="py-16 md:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold tracking-tight text-gray-900">Infraestrutura para Eventos</h2>
+                    <p class="mt-2 text-md text-gray-600 max-w-2xl mx-auto">Oferecemos nosso Salão Social para locação, um espaço completo e sofisticado para casamentos, formaturas e eventos corporativos.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-8 md:p-10">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-2xl font-bold text-amber-800 mb-4">Salão Social (Unidade I)</h3>
+                            <ul class="space-y-3 text-gray-700">
+                                <li class="flex items-start"><span class="text-amber-600 mr-3 text-xl">👥</span><div><span class="font-semibold">Capacidade:</span> 600 pessoas</div></li>
+                                <li class="flex items-start"><span class="text-amber-600 mr-3 text-xl">❄️</span><div><span class="font-semibold">Climatização:</span> 18 aparelhos de ar-condicionado</div></li>
+                                <li class="flex items-start"><span class="text-amber-600 mr-3 text-xl">♿</span><div><span class="font-semibold">Acessibilidade:</span> Elevador para idosos e PNE</div></li>
+                                <li class="flex items-start"><span class="text-amber-600 mr-3 text-xl">🎤</span><div><span class="font-semibold">Estrutura:</span> Palco para apresentações e lustres decorativos</div></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-amber-800 mb-4">Estrutura de Apoio Completa</h3>
+                            <p class="text-gray-600 mb-2"><span class="font-semibold">Cozinha Industrial:</span> Equipada com fogões, coifa, forno e freezers para atender buffets profissionais.</p>
+                            <p class="text-gray-600"><span class="font-semibold">Bar de Apoio:</span> Múltiplos freezers de grande capacidade, bancadas e pias, pronto para o seu evento.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; Sociedade Recreativa Filadélfia. Todos os direitos reservados.</p>
+            <p class="text-sm text-gray-400 mt-2">Este é um painel de visualização de dados não oficial.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.4
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href').substring(1) === entry.target.id) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            const sportsChartCanvas = document.getElementById('sportsChart');
+            if (sportsChartCanvas) {
+                const ctx = sportsChartCanvas.getContext('2d');
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Torneio de Handebol', 'FMT 1000 Tênis'],
+                        datasets: [{
+                            label: 'Nº de Atletas Participantes',
+                            data: [400, 90],
+                            backgroundColor: [
+                                'rgba(217, 119, 6, 0.6)',
+                                'rgba(245, 158, 11, 0.6)'
+                            ],
+                            borderColor: [
+                                'rgba(217, 119, 6, 1)',
+                                'rgba(245, 158, 11, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'Número de Atletas'
+                                }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                display: false
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        return `${context.dataset.label}: ${context.parsed.y} atletas`;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

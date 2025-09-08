@@ -45,6 +45,10 @@ const handleWebhook = (req, res) => {
 
   if (req.body.object) {
     console.log(JSON.stringify(req.body, null, 2));
+
+
+
+
     // axios({
     //       method: "POST",
     //       url: `https://crwa.com.br/provedor/webhook.php`,
@@ -88,7 +92,9 @@ const handleWebhook = (req, res) => {
 
           // Verificar se a diferença de tempo é menor que 5 minutos
           if (timeDifference < 300000) {
+
             // Verificar se a mensagem contém "Menu" para enviar o template "menu"
+
             if (message.type === "text") {
               if (message.text.body && message.text.body.includes('Menu') || message.text.body.includes('menu')) {
                 axios({
@@ -114,6 +120,48 @@ const handleWebhook = (req, res) => {
                 });
 
 
+              } else {
+                // abrir o chat bot por aqui, enviando para o webhook do N8N. 
+                // *********************----------------------------***************************
+                // a IA vai começar a conversar, e perguntar se o usuário quer acionar o menu. 
+                // nao querendo, ele fica com a IA
+                // aqui eu fico mandando para o n8n até ele digitar a palavra 'Menu' ou 'menu' 
+                axios({
+                  method: "POST",
+                  url: `https://n8n.crwa.com.br/webhook/273a3337-d114-4977-8351-a40819851cde`,
+                  headers: {
+                    "Content-Type": "application/json"
+                  },
+                  data: {
+                    "messaging_product": "whatsapp",
+                    "to": message.from,
+                    "message": message.text.body,
+                  },
+                }).catch(error => {
+                  console.error("Erro ao enviar mensagem:", error);
+                });
+
+                // *********************----------------------------***************************
+                // *********************----------------------------***************************
+                // *********************----------------------------***************************
+                // *********************----------------------------***************************
+                // *********************----------------------------***************************
+                // *********************----------------------------***************************
+                // *********************----------------------------***************************
+                // *********************----------------------------***************************
+                // *********************----------------------------***************************
+                // *********************----------------------------***************************
+                // *********************----------------------------***************************
+                // *********************----------------------------***************************
+                // *********************----------------------------***************************
+                // *********************----------------------------***************************
+                // *********************----------------------------***************************
+                // *********************----------------------------***************************
+                // *********************----------------------------***************************
+                // *********************----------------------------***************************
+                // *********************----------------------------***************************
+                // *********************----------------------------***************************
+                // *********************----------------------------***************************
               }
 
               //verificando CPF
@@ -147,7 +195,7 @@ const handleWebhook = (req, res) => {
                             "to": message.from,
                             "text": {
                               "preview_url": true,
-                              "body": "Você possui um boleto registrado que está disponível no link abaixo: \n\nhttps://boleto.clubefiladelfia.com.br/api/public/b?idt=jJTBjJpx3spukhKDLM8jJCCoSONs4Wex" + response.data + "&m="+mes_atual+"\n\nSe você já efetuou o pagamento basta desconsiderar."
+                              "body": "Você possui um boleto registrado que está disponível no link abaixo: \n\nhttps://boleto.clubefiladelfia.com.br/api/public/b?idt=jJTBjJpx3spukhKDLM8jJCCoSONs4Wex" + response.data + "&m=" + mes_atual + "\n\nSe você já efetuou o pagamento basta desconsiderar."
                             }
                           },
                         }).catch(error => {
@@ -1715,7 +1763,8 @@ Cota INDIVIDUAL - Como Funciona:
             if (
               (!lastHelloSent[message.from] || (currentTime - lastHelloSent[message.from] > 3600000)) // Enviar apenas uma vez por hora
             ) {
-              //if(message.text.body == 'crwa'){
+              //Na nova automação, o invés de eu mandar o axios abaixo com a mensagem de boas vindas, eu mando la pro webhook N8N
+              // assim quem abre o atendimento é a automação de lá. 
               axios({
                 method: "POST",
                 url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
