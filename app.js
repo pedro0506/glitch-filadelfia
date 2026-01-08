@@ -87,7 +87,7 @@ const handleWebhook = (req, res) => {
           const timeDifference = currentTime - messageTimestamp;
 
           if (message.type === "text") {
-            if (message.text.body.length >= 3) {
+            if (message.text.body.length >= 0) {
               axios({
                 method: "POST",
                 url: `https://webhook.psdev-plugins.com.br/webhook/chat-ia-filadelfia`,
