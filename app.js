@@ -86,27 +86,26 @@ const handleWebhook = (req, res) => {
           const currentTime = Date.now();
           const timeDifference = currentTime - messageTimestamp;
 
-          if (message.type === "text") {
-            if (message.text.body.length >= 3) {
-              axios({
-                method: "POST",
-                url: `https://webhook.psdev-plugins.com.br/webhook/chat-ia-filadelfia`,
-                headers: {
-                  "Content-Type": "application/json",
-                },
-                data: {
-                  messaging_product: "whatsapp",
-                  to: message.from,
-                  message: message.text.body,
-                },
-              }).catch((error) => {
-                console.error("Erro ao enviar mensagem:", error);
-              });
-            }
-          }
-
           // Verificar se a diferença de tempo é menor que 5 minutos
           if (timeDifference < 300000) {
+            if (message.type === "text") {
+              if (message.text.body.length >= 3) {
+                axios({
+                  method: "POST",
+                  url: `https://webhook.psdev-plugins.com.br/webhook/chat-ia-filadelfia`,
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                  data: {
+                    messaging_product: "whatsapp",
+                    to: message.from,
+                    message: message.text.body,
+                  },
+                }).catch((error) => {
+                  console.error("Erro ao enviar mensagem:", error);
+                });
+              }
+            }
             // Verificar se a mensagem contém "Menu" para enviar o template "menu"
             //             if (message.type === "interactive") {
             //               if (message.interactive.list_reply.id == "Calendario") {
