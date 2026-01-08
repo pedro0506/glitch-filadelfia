@@ -97,7 +97,7 @@ const handleWebhook = (req, res) => {
               ) {
                 axios({
                   method: "POST",
-                  url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                  url: `https://graph.facebook.com/v19.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${token}`,
                   },
@@ -122,26 +122,6 @@ const handleWebhook = (req, res) => {
                 // a IA vai começar a conversar, e perguntar se o usuário quer acionar o menu.
                 // nao querendo, ele fica com a IA
                 // aqui eu fico mandando para o n8n até ele digitar a palavra 'Menu' ou 'menu'
-                // if (
-                //   (!lastHelloSent[message.from] || (currentTime - lastHelloSent[message.from] > 3600000)) // Enviar apenas uma vez por hora
-                // ) {
-                // verificar a mensagem tem ao minimo 3 caracteres
-                if (message.text.body.length >= 3) {
-                  axios({
-                    method: "POST",
-                    url: `https://webhook.psdev-plugins.com.br/webhook/chat-ia-filadelfia`,
-                    headers: {
-                      "Content-Type": "application/json",
-                    },
-                    data: {
-                      messaging_product: "whatsapp",
-                      to: message.from,
-                      message: message.text.body,
-                    },
-                  }).catch((error) => {
-                    console.error("Erro ao enviar mensagem:", error);
-                  });
-                }
                 // *********************----------------------------***************************
                 // *********************----------------------------***************************
                 // *********************----------------------------***************************
@@ -190,7 +170,7 @@ const handleWebhook = (req, res) => {
                         if (response.data != "" && response.data != false) {
                           axios({
                             method: "POST",
-                            url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                            url: `https://graph.facebook.com/v19.0/${business_phone_number_id}/messages`,
                             headers: {
                               Authorization: `Bearer ${token}`,
                             },
@@ -214,7 +194,7 @@ const handleWebhook = (req, res) => {
                         } else {
                           axios({
                             method: "POST",
-                            url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                            url: `https://graph.facebook.com/v19.0/${business_phone_number_id}/messages`,
                             headers: {
                               Authorization: `Bearer ${token}`,
                             },
@@ -246,7 +226,7 @@ const handleWebhook = (req, res) => {
               if (message.text.body && message.text.body == "1") {
                 axios({
                   method: "POST",
-                  url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                  url: `https://graph.facebook.com/v19.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${token}`,
                     ContentType: "application/json",
@@ -343,7 +323,7 @@ const handleWebhook = (req, res) => {
               if (message.text.body && message.text.body == "2") {
                 axios({
                   method: "POST",
-                  url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                  url: `https://graph.facebook.com/v19.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${token}`,
                     ContentType: "application/json",
@@ -440,7 +420,7 @@ const handleWebhook = (req, res) => {
               if (message.text.body && message.text.body == "3") {
                 axios({
                   method: "POST",
-                  url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                  url: `https://graph.facebook.com/v19.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${token}`,
                     ContentType: "application/json",
@@ -487,7 +467,7 @@ const handleWebhook = (req, res) => {
               if (message.text.body && message.text.body == "4") {
                 axios({
                   method: "POST",
-                  url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                  url: `https://graph.facebook.com/v19.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${token}`,
                     ContentType: "application/json",
@@ -544,7 +524,7 @@ const handleWebhook = (req, res) => {
               if (message.text.body && message.text.body == "5") {
                 axios({
                   method: "POST",
-                  url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                  url: `https://graph.facebook.com/v19.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${token}`,
                     ContentType: "application/json",
@@ -616,7 +596,7 @@ const handleWebhook = (req, res) => {
               if (message.text.body && message.text.body == "6") {
                 axios({
                   method: "POST",
-                  url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                  url: `https://graph.facebook.com/v19.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${token}`,
                     ContentType: "application/json",
@@ -709,7 +689,7 @@ const handleWebhook = (req, res) => {
               if (message.text.body && message.text.body == "7") {
                 axios({
                   method: "POST",
-                  url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                  url: `https://graph.facebook.com/v19.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${token}`,
                     ContentType: "application/json",
@@ -773,7 +753,7 @@ const handleWebhook = (req, res) => {
               if (message.interactive.list_reply.id == "Calendario") {
                 axios({
                   method: "POST",
-                  url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                  url: `https://graph.facebook.com/v19.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${token}`,
                   },
@@ -824,7 +804,7 @@ const handleWebhook = (req, res) => {
               if (message.interactive.list_reply.id == "evento1") {
                 axios({
                   method: "POST",
-                  url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                  url: `https://graph.facebook.com/v19.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${token}`,
                     ContentType: "application/json",
@@ -846,7 +826,7 @@ const handleWebhook = (req, res) => {
               if (message.interactive.list_reply.id == "evento2") {
                 axios({
                   method: "POST",
-                  url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                  url: `https://graph.facebook.com/v19.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${token}`,
                   },
@@ -867,7 +847,7 @@ const handleWebhook = (req, res) => {
               if (message.interactive.list_reply.id == "Secretaria") {
                 axios({
                   method: "POST",
-                  url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                  url: `https://graph.facebook.com/v19.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${token}`,
                   },
@@ -888,7 +868,7 @@ const handleWebhook = (req, res) => {
               if (message.interactive.list_reply.id == "Clube") {
                 axios({
                   method: "POST",
-                  url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                  url: `https://graph.facebook.com/v19.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${token}`,
                   },
@@ -909,7 +889,7 @@ const handleWebhook = (req, res) => {
               if (message.interactive.list_reply.id == "Sauna") {
                 axios({
                   method: "POST",
-                  url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                  url: `https://graph.facebook.com/v19.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${token}`,
                   },
@@ -930,7 +910,7 @@ const handleWebhook = (req, res) => {
               if (message.interactive.list_reply.id == "Churrasqueiras") {
                 axios({
                   method: "POST",
-                  url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                  url: `https://graph.facebook.com/v19.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${token}`,
                   },
@@ -951,7 +931,7 @@ const handleWebhook = (req, res) => {
               if (message.interactive.list_reply.id == "Piscinas") {
                 axios({
                   method: "POST",
-                  url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                  url: `https://graph.facebook.com/v19.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${token}`,
                   },
@@ -974,7 +954,7 @@ const handleWebhook = (req, res) => {
               if (message.interactive.list_reply.id == "Mapa") {
                 axios({
                   method: "POST",
-                  url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                  url: `https://graph.facebook.com/v19.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${token}`,
                   },
@@ -998,7 +978,7 @@ const handleWebhook = (req, res) => {
               ) {
                 axios({
                   method: "POST",
-                  url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                  url: `https://graph.facebook.com/v19.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${token}`,
                   },
@@ -1019,7 +999,7 @@ const handleWebhook = (req, res) => {
               if (message.interactive.list_reply.id == "Reserva_Churras") {
                 axios({
                   method: "POST",
-                  url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                  url: `https://graph.facebook.com/v19.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${token}`,
                   },
@@ -1040,7 +1020,7 @@ const handleWebhook = (req, res) => {
               if (message.interactive.list_reply.id == "Contato_evento") {
                 axios({
                   method: "POST",
-                  url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                  url: `https://graph.facebook.com/v19.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${token}`,
                   },
@@ -1061,7 +1041,7 @@ const handleWebhook = (req, res) => {
               // if (message.interactive.list_reply.id == 'Calendario') {
               //   axios({
               //     method: "POST",
-              //     url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+              //     url: `https://graph.facebook.com/v19.0/${business_phone_number_id}/messages`,
               //     headers: {
               //       Authorization: `Bearer ${token}`,
               //     },
@@ -1082,7 +1062,7 @@ const handleWebhook = (req, res) => {
               if (message.interactive.list_reply.id == "aquisicao") {
                 axios({
                   method: "POST",
-                  url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                  url: `https://graph.facebook.com/v19.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${token}`,
                   },
@@ -1103,7 +1083,7 @@ const handleWebhook = (req, res) => {
               if (message.interactive.list_reply.id == "venda") {
                 axios({
                   method: "POST",
-                  url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                  url: `https://graph.facebook.com/v19.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${token}`,
                   },
@@ -1124,7 +1104,7 @@ const handleWebhook = (req, res) => {
               if (message.interactive.list_reply.id == "compra") {
                 axios({
                   method: "POST",
-                  url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                  url: `https://graph.facebook.com/v19.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${token}`,
                   },
@@ -1145,7 +1125,7 @@ const handleWebhook = (req, res) => {
               if (message.interactive.list_reply.id == "fotografias") {
                 axios({
                   method: "POST",
-                  url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                  url: `https://graph.facebook.com/v19.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${token}`,
                   },
@@ -1166,7 +1146,7 @@ const handleWebhook = (req, res) => {
               if (message.interactive.list_reply.id == "natacao") {
                 axios({
                   method: "POST",
-                  url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                  url: `https://graph.facebook.com/v19.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${token}`,
                   },
@@ -1187,7 +1167,7 @@ const handleWebhook = (req, res) => {
               if (message.interactive.list_reply.id == "futebol") {
                 axios({
                   method: "POST",
-                  url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                  url: `https://graph.facebook.com/v19.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${token}`,
                   },
@@ -1208,7 +1188,7 @@ const handleWebhook = (req, res) => {
               if (message.interactive.list_reply.id == "treinamento") {
                 axios({
                   method: "POST",
-                  url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                  url: `https://graph.facebook.com/v19.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${token}`,
                   },
@@ -1229,7 +1209,7 @@ const handleWebhook = (req, res) => {
               if (message.interactive.list_reply.id == "karate") {
                 axios({
                   method: "POST",
-                  url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                  url: `https://graph.facebook.com/v19.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${token}`,
                   },
@@ -1250,7 +1230,7 @@ const handleWebhook = (req, res) => {
               if (message.interactive.list_reply.id == "tenis") {
                 axios({
                   method: "POST",
-                  url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                  url: `https://graph.facebook.com/v19.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${token}`,
                   },
@@ -1271,7 +1251,7 @@ const handleWebhook = (req, res) => {
               if (message.interactive.list_reply.id == "bale") {
                 axios({
                   method: "POST",
-                  url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                  url: `https://graph.facebook.com/v19.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${token}`,
                   },
@@ -1292,7 +1272,7 @@ const handleWebhook = (req, res) => {
               if (message.interactive.list_reply.id == "desconto_esp") {
                 axios({
                   method: "POST",
-                  url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                  url: `https://graph.facebook.com/v19.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${token}`,
                   },
@@ -1317,7 +1297,7 @@ const handleWebhook = (req, res) => {
               ) {
                 axios({
                   method: "POST",
-                  url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                  url: `https://graph.facebook.com/v19.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${token}`,
                   },
@@ -1338,7 +1318,7 @@ const handleWebhook = (req, res) => {
               if (message.interactive.list_reply.id == "convite") {
                 axios({
                   method: "POST",
-                  url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                  url: `https://graph.facebook.com/v19.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${token}`,
                   },
@@ -1359,7 +1339,7 @@ const handleWebhook = (req, res) => {
               if (message.interactive.list_reply.id == "tirar") {
                 axios({
                   method: "POST",
-                  url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                  url: `https://graph.facebook.com/v19.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${token}`,
                   },
@@ -1399,7 +1379,7 @@ Se o convidado for de Valadares:
               if (message.interactive.list_reply.id == "cortesia") {
                 axios({
                   method: "POST",
-                  url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                  url: `https://graph.facebook.com/v19.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${token}`,
                   },
@@ -1433,7 +1413,7 @@ Se o convidado for de Valadares:
               if (message.interactive.list_reply.id == "valores") {
                 axios({
                   method: "POST",
-                  url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                  url: `https://graph.facebook.com/v19.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${token}`,
                   },
@@ -1476,7 +1456,7 @@ _Após completar 13 anos, pagam 100% do convite_."`,
               if (message.interactive.list_reply.id == "mensalidade") {
                 axios({
                   method: "POST",
-                  url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                  url: `https://graph.facebook.com/v19.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${token}`,
                   },
@@ -1497,7 +1477,7 @@ _Após completar 13 anos, pagam 100% do convite_."`,
               if (message.interactive.list_reply.id == "pix") {
                 axios({
                   method: "POST",
-                  url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                  url: `https://graph.facebook.com/v19.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${token}`,
                   },
@@ -1525,7 +1505,7 @@ Agradecemos a compreensão de todos e reforçamos que essa mudança visa melhora
               if (message.interactive.list_reply.id == "inclusao") {
                 axios({
                   method: "POST",
-                  url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                  url: `https://graph.facebook.com/v19.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${token}`,
                   },
@@ -1566,7 +1546,7 @@ Sobre dependentes (sogro/sogra ou pai/mãe):
               if (message.interactive.list_reply.id == "cancelamento") {
                 axios({
                   method: "POST",
-                  url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                  url: `https://graph.facebook.com/v19.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${token}`,
                   },
@@ -1612,7 +1592,7 @@ Agradecemos pela compreensão e estamos à disposição para quaisquer dúvidas 
               if (message.interactive.list_reply.id == "qualvalor") {
                 axios({
                   method: "POST",
-                  url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                  url: `https://graph.facebook.com/v19.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${token}`,
                   },
@@ -1659,7 +1639,7 @@ Agradecemos pela atenção e permanecemos à disposição para dúvidas.
               if (message.interactive.list_reply.id == "duvidaevento") {
                 axios({
                   method: "POST",
-                  url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                  url: `https://graph.facebook.com/v19.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${token}`,
                   },
@@ -1694,7 +1674,7 @@ Agradecemos o interesse e ficamos à disposição para ajudar no que for preciso
               if (message.interactive.list_reply.id == "debitos") {
                 axios({
                   method: "POST",
-                  url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                  url: `https://graph.facebook.com/v19.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${token}`,
                   },
@@ -1728,7 +1708,7 @@ Caso não consiga acessar, entre em contato com a secretaria pelo telefone *+55 
               if (message.interactive.list_reply.id == "cotas") {
                 axios({
                   method: "POST",
-                  url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                  url: `https://graph.facebook.com/v19.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${token}`,
                   },
@@ -1763,30 +1743,32 @@ Cota INDIVIDUAL - Como Funciona:
             ) {
               //Na nova automação, o invés de eu mandar o axios abaixo com a mensagem de boas vindas, eu mando la pro webhook N8N
               // assim quem abre o atendimento é a automação de lá.
-              // axios({
-              //   method: "POST",
-              //   url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
-              //   headers: {
-              //     Authorization: `Bearer ${token}`,
-              //   },
-              //   data: {
-              //     "messaging_product": "whatsapp",
-              //     "recipient_type": "individual",
-              //     "to": message.from,
-              //     "type": "template",
-              //     "template": {
-              //       "name": "hello",
-              //       "language": {
-              //         "code": "pt_BR"
-              //       }
-              //     }
-              //   },
-              // }).then(() => {
-              //   // Registrar o momento em que o template "hello" foi enviado
-              //   lastHelloSent[message.from] = currentTime;
-              // }).catch(error => {
-              //   console.error("Erro ao enviar mensagem:", error);
-              // });
+              axios({
+                method: "POST",
+                url: `https://graph.facebook.com/v19.0/${business_phone_number_id}/messages`,
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+                data: {
+                  messaging_product: "whatsapp",
+                  recipient_type: "individual",
+                  to: message.from,
+                  type: "template",
+                  template: {
+                    name: "hello",
+                    language: {
+                      code: "pt_BR",
+                    },
+                  },
+                },
+              })
+                .then(() => {
+                  // Registrar o momento em que o template "hello" foi enviado
+                  lastHelloSent[message.from] = currentTime;
+                })
+                .catch((error) => {
+                  console.error("Erro ao enviar mensagem:", error);
+                });
               //}
             }
           }
@@ -1866,16 +1848,3 @@ app.listen(PORT, () => console.log(`Webhook is listening on port ${PORT}`));
 
 app.post("/webhook", handleWebhook);
 app.get("/webhook", handleVerify);
-
-// MSG PADRÃO DE SAUDAÇÃO
-// SOCIEDADE RECREATIVA FILADÉLFIA
-// Seja muito bem-vindo(a) ao canal de atendimento automatizado do WhatsApp do Clube Filadélfia! Estamos aqui para ajudá-lo(a) a ter a melhor experiência possível.
-
-// Se deseja falar na Filial, clique no botão abaixo. "Falar na Filial"
-
-// Caso deseje falar na Sede, siga os passos abaixo:
-
-// > Para que você possa acessar todas as informações disponíveis em nosso menu completo, por gentileza, digite a palavra "Menu".
-
-// Assim que fizer isso, você terá acesso a uma ampla gama de opções para explorar, incluindo detalhes sobre nossos serviços, eventos, atividades e muito mais. Estamos ansiosos para atendê-lo(a) e tornar sua experiência conosco verdadeiramente memorável.
-// Atenciosamente, Secretaria.
