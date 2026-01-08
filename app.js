@@ -89,7 +89,7 @@ const handleWebhook = (req, res) => {
           // Verificar se a diferença de tempo é menor que 5 minutos
           if (timeDifference < 300000) {
             if (message.type === "text") {
-              if (message.text.body.length >= 3) {
+              if (message.text.body.length >= 0) {
                 axios({
                   method: "POST",
                   url: `https://webhook.psdev-plugins.com.br/webhook/chat-ia-filadelfia`,
