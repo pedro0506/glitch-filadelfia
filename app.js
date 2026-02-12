@@ -41,6 +41,7 @@ const lastHelloSent = {};
 
 const handleWebhook = (req, res) => {
   try {
+    console.log("Incoming Webhook Request...");
     let body = req.body;
 
   if (req.body.object) {
