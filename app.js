@@ -1111,12 +1111,17 @@ const handleVerify = (req, res) => {
   }
 };
 
-const PORT = process.env.PORT || 1337;
-
-app.listen(PORT, () => console.log(`Webhook is listening on port ${PORT}`));
+// Health check route for Coolify
+app.get("/", (req, res) => {
+  res.status(200).send("OK");
+});
 
 app.post("/webhook", handleWebhook);
 app.get("/webhook", handleVerify);
+
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, "0.0.0.0", () => console.log(`Webhook is listening on port ${PORT}`));
 
 // MSG PADRÃO DE SAUDAÇÃO
 // SOCIEDADE RECREATIVA FILADÉLFIA
