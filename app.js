@@ -1101,21 +1101,14 @@ const handleVerify = (req, res) => {
   let token = req.query["hub.verify_token"];
   let challenge = req.query["hub.challenge"];
 
-  console.log("--- WEBHOOK VERIFICATION ATTEMPT ---");
-  console.log("Mode:", mode);
-  console.log("Received Token:", token);
-  console.log("Expected Token (from env):", verify_token);
-
   if (mode && token) {
     if (mode === "subscribe" && token === verify_token) {
       console.log("WEBHOOK_VERIFIED");
       res.status(200).send(challenge);
     } else {
-      console.log("WEBHOOK_VERIFICATION_FAILED: Tokens do not match");
       res.sendStatus(403);
     }
   } else {
-    console.log("WEBHOOK_VERIFICATION_FAILED: Missing mode or token");
     res.status(400).send("Missing parameters");
   }
 };
