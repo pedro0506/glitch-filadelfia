@@ -99,7 +99,7 @@ const handleWebhook = (req, res) => {
               if (message.text.body.length >= 0) {
                 axios({
                   method: "POST",
-                  url: `https://webhook.psdev-plugins.com.br/webhook/chat-ia-filadelfia`,
+                  url: `https://webhook.psdev-plugins.com.br/webhook/rag`,
                   headers: {
                     "Content-Type": "application/json",
                   },
