@@ -1108,6 +1108,8 @@ const handleVerify = (req, res) => {
     } else {
       res.sendStatus(403);
     }
+  } else {
+    res.status(400).send("Missing parameters");
   }
 };
 
