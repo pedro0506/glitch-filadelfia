@@ -40,7 +40,8 @@ const handledMessages = {}; // Objeto para armazenar os IDs das mensagens que jÃ
 const lastHelloSent = {};
 
 const handleWebhook = (req, res) => {
-  let body = req.body;
+  try {
+    let body = req.body;
 
   if (req.body.object) {
     console.log(JSON.stringify(req.body, null, 2));
@@ -67,7 +68,12 @@ const handleWebhook = (req, res) => {
       console.error("Erro ao enviar mensagem ao WebHook:", error);
     });
 
-    if (req.body.entry && req.body.entry[0].changes[0].value.messages[0]) {
+    if (
+      req.body.entry &&
+      req.body.entry[0].changes &&
+      req.body.entry[0].changes[0].value.messages &&
+      req.body.entry[0].changes[0].value.messages[0]
+    ) {
       const message = req.body.entry[0].changes[0].value.messages[0];
 
       console.log("MESSAGE_RECEBIDA" + JSON.stringify(message, null, 2));
@@ -1094,6 +1100,10 @@ const handleWebhook = (req, res) => {
   } else {
     res.sendStatus(404);
   }
+} catch (err) {
+  console.error("FATAL_ERROR_IN_WEBHOOK_HANDLER:", err);
+  res.sendStatus(500);
+}
 };
 
 const handleVerify = (req, res) => {

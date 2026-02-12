@@ -1,0 +1,2731 @@
+Webhook is listening on port 3000
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzg4Mjc1MDAzFQIAERgSNjlCQTU3MDBGQURCNjhENDk4AA==",
+                "status": "sent",
+                "timestamp": "1770320103",
+                "recipient_id": "553388275003",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzg4MzE1NTAxFQIAERgSNUE1MzNDN0U2OTc2NzAxOTE2AA==",
+                "status": "sent",
+                "timestamp": "1770319436",
+                "recipient_id": "553388315501",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzg4NDg3NjE1FQIAERgSRDdFNTlCOUZDN0RGRUY0RDY2AA==",
+                "status": "sent",
+                "timestamp": "1770319392",
+                "recipient_id": "553388487615",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzg4MzE1NTAxFQIAERgSNUE1MzNDN0U2OTc2NzAxOTE2AA==",
+                "status": "sent",
+                "timestamp": "1770319436",
+                "recipient_id": "553388315501",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzg0MTk2NDc0FQIAERgSNUM1RTZCRDkzMjI4OEYxMDU5AA==",
+                "status": "sent",
+                "timestamp": "1770319273",
+                "recipient_id": "553384196474",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzk5ODkxNjIwFQIAERgSMEFFMkE0QjE5ODZBM0E5Nzk5AA==",
+                "status": "delivered",
+                "timestamp": "1770320264",
+                "recipient_id": "553399891620",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzg0MjQwODc3FQIAERgSQzBFOTRCN0NFRjgxQkI1REY3AA==",
+                "status": "delivered",
+                "timestamp": "1770319439",
+                "recipient_id": "553384240877",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzg4MzMwMTgxFQIAERgSRTJDMUMwNkMyQTdGNDgxREYxAA==",
+                "status": "sent",
+                "timestamp": "1770320947",
+                "recipient_id": "553388330181",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzg4MzMwMTgxFQIAERgSRTJDMUMwNkMyQTdGNDgxREYxAA==",
+                "status": "sent",
+                "timestamp": "1770320947",
+                "recipient_id": "553388330181",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzg4MzMwMTgxFQIAERgSRTJDMUMwNkMyQTdGNDgxREYxAA==",
+                "status": "sent",
+                "timestamp": "1770320947",
+                "recipient_id": "553388330181",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzg4MDEwNzA5FQIAERgSRTU4RkVEQTk3QzE0MDUyOTFEAA==",
+                "status": "delivered",
+                "timestamp": "1770319319",
+                "recipient_id": "553388010709",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzg4MjI4NDg2FQIAERgSMDc0NzZFQ0FERjBBNThCNDc3AA==",
+                "status": "delivered",
+                "timestamp": "1770319441",
+                "recipient_id": "553388228486",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzg4MjI4NDg2FQIAERgSMDc0NzZFQ0FERjBBNThCNDc3AA==",
+                "status": "delivered",
+                "timestamp": "1770319441",
+                "recipient_id": "553388228486",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzg4Nzg0NDUwFQIAERgSRTQzNkMxQUJFODlDOENFODlDAA==",
+                "status": "read",
+                "timestamp": "1770295140",
+                "recipient_id": "553388784450",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "marketing",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzg4MDkyNTk2FQIAERgSQ0Y0RDlGMUM4NzJDMjZCMjk5AA==",
+                "status": "sent",
+                "timestamp": "1770294010",
+                "recipient_id": "553388092596",
+                "pricing": {
+                  "billable": false,
+                  "pricing_model": "PMP",
+                  "category": "service",
+                  "type": "free_customer_service"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzg4MDkyNTk2FQIAERgSQ0Y0RDlGMUM4NzJDMjZCMjk5AA==",
+                "status": "sent",
+                "timestamp": "1770294010",
+                "recipient_id": "553388092596",
+                "pricing": {
+                  "billable": false,
+                  "pricing_model": "PMP",
+                  "category": "service",
+                  "type": "free_customer_service"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzg4NTE2NjAxFQIAERgSN0RBMkYyQzZDNTY5RDI3NzI0AA==",
+                "status": "delivered",
+                "timestamp": "1770319291",
+                "recipient_id": "553388516601",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzg4MjAyMDM5FQIAERgSRkU2NjU3MTE2OUI0NjI1OUY5AA==",
+                "status": "delivered",
+                "timestamp": "1770321016",
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+                "recipient_id": "553388202039",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzg4MjAyMDM5FQIAERgSRkU2NjU3MTE2OUI0NjI1OUY5AA==",
+                "status": "delivered",
+                "timestamp": "1770321016",
+                "recipient_id": "553388202039",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzg4MDU1ODU2FQIAERgSRjg4MTM1REU3QUM5QUJCRDlBAA==",
+                "status": "delivered",
+                "timestamp": "1770319311",
+                "recipient_id": "553388055856",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzg4MzMwMTgxFQIAERgSRTJDMUMwNkMyQTdGNDgxREYxAA==",
+                "status": "sent",
+                "timestamp": "1770320947",
+                "recipient_id": "553388330181",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzg4ODc2MTIwFQIAERgSMDk3N0YwOTNDRTMwNzI4NDU0AA==",
+                "status": "sent",
+                "timestamp": "1770319409",
+                "recipient_id": "553388876120",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzk5ODkxNjIwFQIAERgSMEFFMkE0QjE5ODZBM0E5Nzk5AA==",
+                "status": "delivered",
+                "timestamp": "1770320264",
+                "recipient_id": "553399891620",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzg4NjMzODAzFQIAERgSOTkyNkU0QTQwMTE2QTlCRDg1AA==",
+                "status": "delivered",
+                "timestamp": "1770319450",
+                "recipient_id": "553388633803",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzg4NjMzODAzFQIAERgSOTkyNkU0QTQwMTE2QTlCRDg1AA==",
+                "status": "delivered",
+                "timestamp": "1770319450",
+                "recipient_id": "553388633803",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzg4MzE1NTAxFQIAERgSNUE1MzNDN0U2OTc2NzAxOTE2AA==",
+                "status": "sent",
+                "timestamp": "1770319436",
+                "recipient_id": "553388315501",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzg4MDkyNTk2FQIAERgSQ0Y0RDlGMUM4NzJDMjZCMjk5AA==",
+                "status": "sent",
+                "timestamp": "1770294010",
+                "recipient_id": "553388092596",
+                "pricing": {
+                  "billable": false,
+                  "pricing_model": "PMP",
+                  "category": "service",
+                  "type": "free_customer_service"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzg0MTI1MDUyFQIAERgSMENFOEVBMDAwMTY1NTkzMkY4AA==",
+                "status": "delivered",
+                "timestamp": "1770319317",
+                "recipient_id": "553384125052",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzg0MTk2NDc0FQIAERgSNUM1RTZCRDkzMjI4OEYxMDU5AA==",
+                "status": "sent",
+                "timestamp": "1770319273",
+                "recipient_id": "553384196474",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzg0MTk2NDc0FQIAERgSNUM1RTZCRDkzMjI4OEYxMDU5AA==",
+                "status": "sent",
+                "timestamp": "1770319273",
+                "recipient_id": "553384196474",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzkxMzUwMzM1FQIAERgSRUIzNzQyMDE2OTQ5RTIwQzQ4AA==",
+                "status": "sent",
+                "timestamp": "1770320936",
+                "recipient_id": "553391350335",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgNNTUxNjk4MTAzNDMxMRUCABEYEkQ2N0MwMjc1NDhGODQ0RUYzNwA=",
+                "status": "delivered",
+                "timestamp": "1770896999",
+                "recipient_id": "5516981034311",
+                "pricing": {
+                  "billable": false,
+                  "pricing_model": "PMP",
+                  "category": "service",
+                  "type": "free_customer_service"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzkxNTMxMjIwFQIAERgSMEJFMUVDM0VENkI0MjA0MjUwAA==",
+                "status": "read",
+                "timestamp": "1770319160",
+                "recipient_id": "553391531220",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzkxNTMxMjIwFQIAERgSMEJFMUVDM0VENkI0MjA0MjUwAA==",
+                "status": "read",
+                "timestamp": "1770319160",
+                "recipient_id": "553391531220",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzg4NDg3NjE1FQIAERgSRDdFNTlCOUZDN0RGRUY0RDY2AA==",
+                "status": "delivered",
+                "timestamp": "1770319392",
+                "recipient_id": "553388487615",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzkxNTMxMjIwFQIAERgSMEJFMUVDM0VENkI0MjA0MjUwAA==",
+                "status": "read",
+                "timestamp": "1770319160",
+                "recipient_id": "553391531220",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzg4NDg3NjE1FQIAERgSRDdFNTlCOUZDN0RGRUY0RDY2AA==",
+                "status": "delivered",
+                "timestamp": "1770319392",
+                "recipient_id": "553388487615",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzkxNTMxMjIwFQIAERgSMEJFMUVDM0VENkI0MjA0MjUwAA==",
+                "status": "read",
+                "timestamp": "1770319160",
+                "recipient_id": "553391531220",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzg4NDg3NjE1FQIAERgSRDdFNTlCOUZDN0RGRUY0RDY2AA==",
+                "status": "delivered",
+                "timestamp": "1770319392",
+                "recipient_id": "553388487615",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzg4NjMzODAzFQIAERgSOTkyNkU0QTQwMTE2QTlCRDg1AA==",
+                "status": "delivered",
+                "timestamp": "1770319450",
+                "recipient_id": "553388633803",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzg4MzE1NTAxFQIAERgSNUE1MzNDN0U2OTc2NzAxOTE2AA==",
+                "status": "sent",
+                "timestamp": "1770319436",
+                "recipient_id": "553388315501",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "contacts": [
+              {
+                "profile": {
+                  "name": "Jhonatas Campos Siqueira"
+                },
+                "wa_id": "553388602626"
+              }
+            ],
+            "messages": [
+              {
+                "from": "553388602626",
+                "id": "wamid.HBgMNTUzMzg4NjAyNjI2FQIAEhggQUMyRTg5MUMwMkM2REE2QjE0MzE5RjMwRDIzQjIzNDEA",
+                "timestamp": "1770308854",
+                "text": {
+                  "body": "Boa Tarde"
+                },
+                "type": "text"
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+MESSAGE_RECEBIDA{
+  "from": "553388602626",
+  "id": "wamid.HBgMNTUzMzg4NjAyNjI2FQIAEhggQUMyRTg5MUMwMkM2REE2QjE0MzE5RjMwRDIzQjIzNDEA",
+  "timestamp": "1770308854",
+  "text": {
+    "body": "Boa Tarde"
+  },
+  "type": "text"
+}
+238778485979514
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzg4MjAyMDM5FQIAERgSRkU2NjU3MTE2OUI0NjI1OUY5AA==",
+                "status": "delivered",
+                "timestamp": "1770321016",
+                "recipient_id": "553388202039",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzkxMzYyMzU2FQIAERgSMkQzQkFDRjg4Q0U4NDAyMzMwAA==",
+                "status": "sent",
+                "timestamp": "1770320111",
+                "recipient_id": "553391362356",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "contacts": [
+              {
+                "profile": {
+                  "name": "Jhonatas Campos Siqueira"
+                },
+                "wa_id": "553388602626"
+              }
+            ],
+            "messages": [
+              {
+                "from": "553388602626",
+                "id": "wamid.HBgMNTUzMzg4NjAyNjI2FQIAEhggQUMyRTg5MUMwMkM2REE2QjE0MzE5RjMwRDIzQjIzNDEA",
+                "timestamp": "1770308854",
+                "text": {
+                  "body": "Boa Tarde"
+                },
+                "type": "text"
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+MESSAGE_RECEBIDA{
+  "from": "553388602626",
+  "id": "wamid.HBgMNTUzMzg4NjAyNjI2FQIAEhggQUMyRTg5MUMwMkM2REE2QjE0MzE5RjMwRDIzQjIzNDEA",
+  "timestamp": "1770308854",
+  "text": {
+    "body": "Boa Tarde"
+  },
+  "type": "text"
+}
+238778485979514
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzg4NDg3NjE1FQIAERgSRDdFNTlCOUZDN0RGRUY0RDY2AA==",
+                "status": "delivered",
+                "timestamp": "1770319392",
+                "recipient_id": "553388487615",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzkxNTMxMjIwFQIAERgSMEJFMUVDM0VENkI0MjA0MjUwAA==",
+                "status": "read",
+                "timestamp": "1770319160",
+                "recipient_id": "553391531220",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzg4MDEwNzA5FQIAERgSRTU4RkVEQTk3QzE0MDUyOTFEAA==",
+                "status": "delivered",
+                "timestamp": "1770319319",
+                "recipient_id": "553388010709",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzg4MTcxODk2FQIAERgSOUNENkQ0RTU5RkNFOUMyOTAzAA==",
+                "status": "sent",
+                "timestamp": "1770319364",
+                "recipient_id": "553388171896",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzg4MTcxODk2FQIAERgSOUNENkQ0RTU5RkNFOUMyOTAzAA==",
+                "status": "sent",
+                "timestamp": "1770319364",
+                "recipient_id": "553388171896",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:1051:50)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:1051:50)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzg4MTcxODk2FQIAERgSOUNENkQ0RTU5RkNFOUMyOTAzAA==",
+                "status": "sent",
+                "timestamp": "1770319364",
+                "recipient_id": "553388171896",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzg4NDg3NjE1FQIAERgSRDdFNTlCOUZDN0RGRUY0RDY2AA==",
+                "status": "delivered",
+                "timestamp": "1770319392",
+                "recipient_id": "553388487615",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzkxMDgzMzk1FQIAERgSQ0E1MEQ4QkFFN0UyNjQzMERGAA==",
+                "status": "read",
+                "timestamp": "1770320243",
+                "recipient_id": "553391083395",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzg4MDEwNzA5FQIAERgSRTU4RkVEQTk3QzE0MDUyOTFEAA==",
+                "status": "delivered",
+                "timestamp": "1770319319",
+                "recipient_id": "553388010709",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzg4NDg3NjE1FQIAERgSRDdFNTlCOUZDN0RGRUY0RDY2AA==",
+                "status": "delivered",
+                "timestamp": "1770319392",
+                "recipient_id": "553388487615",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzg0MTI1MDUyFQIAERgSMENFOEVBMDAwMTY1NTkzMkY4AA==",
+                "status": "delivered",
+                "timestamp": "1770319317",
+                "recipient_id": "553384125052",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzg0MTk2NDc0FQIAERgSNUM1RTZCRDkzMjI4OEYxMDU5AA==",
+                "status": "sent",
+                "timestamp": "1770319273",
+                "recipient_id": "553384196474",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzk5MzU4NjM2FQIAERgSRjUzRUVDQ0JFQTZDOTM0MTdEAA==",
+                "status": "read",
+                "timestamp": "1770320108",
+                "recipient_id": "553399358636",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzg0MTk2NDc0FQIAERgSNUM1RTZCRDkzMjI4OEYxMDU5AA==",
+                "status": "sent",
+                "timestamp": "1770319273",
+                "recipient_id": "553384196474",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "219993351197736",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "553399853556",
+              "phone_number_id": "238778485979514"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTUzMzg0MTk2NDc0FQIAERgSNUM1RTZCRDkzMjI4OEYxMDU5AA==",
+                "status": "sent",
+                "timestamp": "1770319273",
+                "recipient_id": "553384196474",
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "PMP",
+                  "category": "utility",
+                  "type": "regular"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+TypeError: Cannot read properties of undefined (reading '0')
+    at handleWebhook (/app/app.js:70:70)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at /app/node_modules/body-parser/lib/read.js:137:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
