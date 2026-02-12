@@ -88,7 +88,14 @@ const handleWebhook = (req, res) => {
           // Marcar a mensagem como tratada
           handledMessages[message.id] = true;
 
-          if (message.type === "text") {
+          // Calcular a diferença entre o timestamp atual e o timestamp da mensagem
+          const messageTimestamp = message.timestamp * 1000; // Convertendo para milissegundos
+          const currentTime = Date.now();
+          const timeDifference = currentTime - messageTimestamp;
+
+          // Verificar se a diferença de tempo é menor que 5 minutos
+          if (timeDifference < 300000) {
+            if (message.type === "text") {
               if (message.text.body.length >= 0) {
                 axios({
                   method: "POST",
@@ -1040,6 +1047,7 @@ const handleWebhook = (req, res) => {
             //               // });
             //               //}
             //             }
+          }
         }
       }
     }
